@@ -1,0 +1,6815 @@
+{
+	"info": {
+		"_postman_id": "ad07fd59-3aaf-4b0c-ac0d-bd5d9972d86e",
+		"name": "soq",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32787726",
+		"_collection_link": "https://your1site.postman.co/workspace/y1s~acd8e0eb-e302-427e-8ae6-fc79c120eeab/collection/32787726-ad07fd59-3aaf-4b0c-ac0d-bd5d9972d86e?action=share&source=collection_link&creator=32787726"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register as customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "customer",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "customer@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "99992289",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/customer/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"customer",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register as seller",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "store_owner_name",
+									"value": "seller",
+									"type": "text"
+								},
+								{
+									"key": "store_name",
+									"value": "store",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Damascus",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/Users/ramaabbas/Documents/Work/images-10.jpeg"
+								},
+								{
+									"key": "description",
+									"value": "new store",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "095172839399",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "seller6@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/seller/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"seller",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register from socialMedia",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/register/social/google",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"register",
+								"social",
+								"google"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upgrade to seller",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3Zjg3Ni04YmNhLTcwZTItYTczYy0yMmE2Mzk2YWZhMWIiLCJqdGkiOiI5OGFmNDVlZDdmZjIyYWE4NzMzYzYyNGQ4NzNkZDZkNmFhYjZkMmI0NDM3NDQyODY0YTJmNDA3NWE3OTU1ZjdiNzRiMzQ4MmQzZjVkNGM3MyIsImlhdCI6MTc1MjIyMDIyMi40MzExODEsIm5iZiI6MTc1MjIyMDIyMi40MzExODUsImV4cCI6MTc4Mzc1NjIyMi40MTIzODQsInN1YiI6IjExIiwic2NvcGVzIjpbXX0.KwixxkKY2d8GTzEsGF4UhgjZ7fAUXnv33Qv9k4LZ0URxYjCXHUiQk6vdapO0XMHL9-685qO_35PYqkZCNKktCWpuRIHnvJSnldVnrcVGZD09WYmeA-teOG9hKQu4mrccE8OjEIDGbnL-WnKuRtIUJmNQHGhzC3GS1ae39s3hH16bAlNgJpd6YrWfITnijWzke72KOpYdzqBxVJn6z44BeA9TPTS2gP2-pvdS_rRn1BpkZ545ea_dtSDgUNykbmYd3XpXXZo46WLYUaBTSS0pj_Rxb2duXD4AJFhkSkNNVR7YwaDWChRzG_a0fOgmv2st864XJNhG3WEinDrkfzmJgQLT7JZqZk5hSNx25T0-C26Jb7KpbFVy2L2Ffli-gS0ch7IKabIx7kGPnAdKX3p-EZeOqAy66aw2xK3e379wmrpYjob_zYD1EiOZDi67RIdspvHzOa_KTARWfxAnJ-cL8FaknXOnPFdhVCXh5VgX4mzoK-n7Z8aAGL6RbXvRtekB4I0lat6UvC66E5o1NQg9RNqam9MsNV7rJxVylwJGQLYMZngxNlXf7i4cSmROnGyc88XAS76SghElAqsnFAwr7COoJ8oumM4bjtNZ5mVyWOm567upFtXvU_-SFzu3897DzLU6WtkZiES7kCxk_fQ-h2TzFIypvDGz3pSSDU29z24",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "store_owner_name",
+									"value": "test seller",
+									"type": "text"
+								},
+								{
+									"key": "store_name",
+									"value": "test store",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "test address",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/Users/ramaabbas/Documents/Work/images-10.jpeg"
+								},
+								{
+									"key": "description",
+									"value": "dessert store",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "99992289",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "customer2@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/customer/upgrade-to-seller",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"customer",
+								"upgrade-to-seller"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{general_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "old_password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/update-password",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send OTP for forget password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/password/forgot",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"password",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-otp for forget password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "otp",
+									"value": "111111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/password/verify-otp",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"password",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password after OTP",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "reset_6856b826057763.45263049",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345666666",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345666666",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/password/reset",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"password",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(pm.response.code == 200){\r",
+									"    var jsonData = pm.response.json();\r",
+									"    if(jsonData && jsonData.result && jsonData.result.token){\r",
+									"        pm.collectionVariables.set(\"token\", jsonData.result.token);\r",
+									"    }\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user@user.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server}}/api/logout",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register as guest",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/guest/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"guest",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login as admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get customers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiIwOGU3ZGZkNDg2MmJmN2ZmMzRkMzczMjA4OTFlNTQ0NzUyMjNkY2UwODQyMTVmYzlmNTlhNjMzZTc4MDdjMzQ2YzJlM2ZkMjE2YzU4NmI1NiIsImlhdCI6MTc1MjM5NzQwNy42ODEzMzEsIm5iZiI6MTc1MjM5NzQwNy42ODEzMzEsImV4cCI6MTc4MzkzMzQwNy42NjczOCwic3ViIjoiMjMiLCJzY29wZXMiOltdfQ.N9wcF94kkY_2DcYRsTlE4UoFj5qmhKmL-RHHbhDbmmZJQmGH5Izum2a8Kmoj5S5KMyjjtn0E7wthR6zj2ejRfKoBWgbbcRLBFCjFbg-A_3K3jwHPAszGz7PoInXs7LHPj_5OE65unzMpKQ8U84fwkWhTVSLYqs7GPZrprKwZmqvOrbWvKEeu7DsYwaAPmI_JaOsBy-sW3NCsGUmNzLFSztEVlEiIRtJJNXi63T5xGPf3kdC_zg8mIZBSb3PfqQRQ2X7_LtFHTAyr-__XHEqRECL3tVf1YZM8IzklYm99KbwG3hRxWlQG6gCUmffmUFadCQUjXS5n8fLlcA9H7p3JDj3paOFnhYQpu8pk37iKP3OtI_Y6-vhROck1VzKn7gEXp1iCe3pAQibEAvfe4e6xWJZvhml2LgAr2yG6BOaVmwLucKUm8e6MVKIzGW2fH9EHBlv0D4FoAD0CCkB1aMn9ou7dlC-S_9qVrflaTpNzgepIFZYuwfTQxD9bNKmPMkMKLyOb43mENYhnCWYYatF8rmnhnDJW1O-hqtn33RzfmWz7iGyzXSJxCw4ge6KDOoYXaBmD1QZyRDb7V8xKao6nsttEkHlqz3AopoKphufqu1fvVXrk0q1GEzvdPkGTxEGGGEHkTxWwq5xFNlX4dyxrji20NvOrNNoFtqbQqEIsXIM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/customers",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Add  New Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3Zjg3Ni04YmNhLTcwZTItYTczYy0yMmE2Mzk2YWZhMWIiLCJqdGkiOiI5OGFmNDVlZDdmZjIyYWE4NzMzYzYyNGQ4NzNkZDZkNmFhYjZkMmI0NDM3NDQyODY0YTJmNDA3NWE3OTU1ZjdiNzRiMzQ4MmQzZjVkNGM3MyIsImlhdCI6MTc1MjIyMDIyMi40MzExODEsIm5iZiI6MTc1MjIyMDIyMi40MzExODUsImV4cCI6MTc4Mzc1NjIyMi40MTIzODQsInN1YiI6IjExIiwic2NvcGVzIjpbXX0.KwixxkKY2d8GTzEsGF4UhgjZ7fAUXnv33Qv9k4LZ0URxYjCXHUiQk6vdapO0XMHL9-685qO_35PYqkZCNKktCWpuRIHnvJSnldVnrcVGZD09WYmeA-teOG9hKQu4mrccE8OjEIDGbnL-WnKuRtIUJmNQHGhzC3GS1ae39s3hH16bAlNgJpd6YrWfITnijWzke72KOpYdzqBxVJn6z44BeA9TPTS2gP2-pvdS_rRn1BpkZ545ea_dtSDgUNykbmYd3XpXXZo46WLYUaBTSS0pj_Rxb2duXD4AJFhkSkNNVR7YwaDWChRzG_a0fOgmv2st864XJNhG3WEinDrkfzmJgQLT7JZqZk5hSNx25T0-C26Jb7KpbFVy2L2Ffli-gS0ch7IKabIx7kGPnAdKX3p-EZeOqAy66aw2xK3e379wmrpYjob_zYD1EiOZDi67RIdspvHzOa_KTARWfxAnJ-cL8FaknXOnPFdhVCXh5VgX4mzoK-n7Z8aAGL6RbXvRtekB4I0lat6UvC66E5o1NQg9RNqam9MsNV7rJxVylwJGQLYMZngxNlXf7i4cSmROnGyc88XAS76SghElAqsnFAwr7COoJ8oumM4bjtNZ5mVyWOm567upFtXvU_-SFzu3897DzLU6WtkZiES7kCxk_fQ-h2TzFIypvDGz3pSSDU29z24",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name[ar]",
+									"value": "ar name",
+									"type": "text"
+								},
+								{
+									"key": "name[en]",
+									"value": "en name",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/ramaabbas/Documents/Work/images-10.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/categories",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server}}/api/categories",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "7",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server}}/api/categories/2?name[ar]=ar name update&name[en]=en name update&image",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"2"
+							],
+							"query": [
+								{
+									"key": "name[ar]",
+									"value": "ar name update"
+								},
+								{
+									"key": "name[en]",
+									"value": "en name update"
+								},
+								{
+									"key": "image",
+									"value": null,
+									"description": "file"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server}}/api/categories/2",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sub Category",
+			"item": [
+				{
+					"name": "Add SubCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3Zjg3Ni04YmNhLTcwZTItYTczYy0yMmE2Mzk2YWZhMWIiLCJqdGkiOiI5OGFmNDVlZDdmZjIyYWE4NzMzYzYyNGQ4NzNkZDZkNmFhYjZkMmI0NDM3NDQyODY0YTJmNDA3NWE3OTU1ZjdiNzRiMzQ4MmQzZjVkNGM3MyIsImlhdCI6MTc1MjIyMDIyMi40MzExODEsIm5iZiI6MTc1MjIyMDIyMi40MzExODUsImV4cCI6MTc4Mzc1NjIyMi40MTIzODQsInN1YiI6IjExIiwic2NvcGVzIjpbXX0.KwixxkKY2d8GTzEsGF4UhgjZ7fAUXnv33Qv9k4LZ0URxYjCXHUiQk6vdapO0XMHL9-685qO_35PYqkZCNKktCWpuRIHnvJSnldVnrcVGZD09WYmeA-teOG9hKQu4mrccE8OjEIDGbnL-WnKuRtIUJmNQHGhzC3GS1ae39s3hH16bAlNgJpd6YrWfITnijWzke72KOpYdzqBxVJn6z44BeA9TPTS2gP2-pvdS_rRn1BpkZ545ea_dtSDgUNykbmYd3XpXXZo46WLYUaBTSS0pj_Rxb2duXD4AJFhkSkNNVR7YwaDWChRzG_a0fOgmv2st864XJNhG3WEinDrkfzmJgQLT7JZqZk5hSNx25T0-C26Jb7KpbFVy2L2Ffli-gS0ch7IKabIx7kGPnAdKX3p-EZeOqAy66aw2xK3e379wmrpYjob_zYD1EiOZDi67RIdspvHzOa_KTARWfxAnJ-cL8FaknXOnPFdhVCXh5VgX4mzoK-n7Z8aAGL6RbXvRtekB4I0lat6UvC66E5o1NQg9RNqam9MsNV7rJxVylwJGQLYMZngxNlXf7i4cSmROnGyc88XAS76SghElAqsnFAwr7COoJ8oumM4bjtNZ5mVyWOm567upFtXvU_-SFzu3897DzLU6WtkZiES7kCxk_fQ-h2TzFIypvDGz3pSSDU29z24",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name[en]",
+									"value": "en name",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/ramaabbas/Documents/Work/images-10.jpeg"
+								},
+								{
+									"key": "name[ar]",
+									"value": "ar name ",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/sub-categories",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"sub-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sub-Categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/sub-categories",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"sub-categories"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update subCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server}}/api/sub-categories/2?name[ar]=new ar name &name[en]=new en name ",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"sub-categories",
+								"2"
+							],
+							"query": [
+								{
+									"key": "name[ar]",
+									"value": "new ar name "
+								},
+								{
+									"key": "name[en]",
+									"value": "new en name "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete subCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server}}/api/sub-categories/1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"sub-categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Add products",
+					"item": [
+						{
+							"name": "Furniture and miscellaneous",
+							"item": [
+								{
+									"name": "add miscellaneous",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "23",
+													"description": "Integer /Number",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10,2) ",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0->5",
+													"type": "file",
+													"src": "/Users/ramaabbas/Desktop/مركبات.png"
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": "['new', 'used','مستعمل','جديد'] / اختر اما القيم الهربية او الانكليزية ",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "test des............................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "مولد كهربائي",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']ايضا اختيار اما العربية او الانكليوية ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": " ['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "مولد كهربائي",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "size_or_weight",
+													"value": "20 كغ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "هوندا",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": "Eu44",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "year_of_manufacture",
+													"value": "2023",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "warranty",
+													"value": "لا يوجد",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "accessories",
+													"value": "شاحن , بطاريات ,كبلات كهربا ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "main_specification",
+													"value": "قدرة 3 كيلو واط ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"description": "dont change this ",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add furniture",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "24",
+													"description": "Integer /Number",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal(10,2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": "['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": ".........................................................................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "سرير مزدوج مع عربة ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": " ['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "سرير مزدوج مع عربة ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "dimensions",
+													"value": "200*220",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "year_of_manufacture",
+													"value": "2023",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "warranty",
+													"value": "لا يوجد",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "made_from",
+													"value": "خشب زان ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "color",
+													"value": "اسود ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "state_specification",
+													"value": "يوجد بعض الخدوش ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"description": "dont change this ",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Entertainment",
+							"item": [
+								{
+									"name": "add playStation",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "14",
+													"description": "Number ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10,2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file  0->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": "['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "محل تجاري للايجار  ............",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": "['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ] ",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "بلايستيشن 5",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": "Digital ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "storage",
+													"value": "800 جيجابايت",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "num_of_accessories_supplied",
+													"value": "2 يد + قاعدة شحن ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "date_of_purchase",
+													"value": "2024",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "attached_games",
+													"value": "1",
+													"description": "bool 1,0",
+													"type": "text"
+												},
+												{
+													"key": "warranty",
+													"value": "نعم حتى 2026",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add video games",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "17",
+													"description": "Number",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal(10,2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": " ['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "..............................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "فيفا 24 اصلية مستعملة للبيع ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "55",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "fifa 24 ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "version",
+													"value": "strandard ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "online_availability",
+													"value": "1",
+													"description": "bool 1,0 ",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add musical instruments",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "15",
+													"description": "Number",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal 10,2",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0--->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": "['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "...............",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "جيتار كهربائي للبيع ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": "['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "جيتار كهربائي ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": "startcaster ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "Fender",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "accessories",
+													"value": "حقيبة ,ريشة",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "date_of_purchase",
+													"value": "2024",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "warranty",
+													"value": "نعم حتى 2026",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "color",
+													"value": "احمر",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add books & magazines",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "16",
+													"description": "Number",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal 10,2",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0---->5",
+													"type": "file",
+													"src": "postman-cloud:///1ef033ca-a001-4d30-a7ba-cdb173561056"
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": " ['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "....................................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "جيتار كهربائي للبيع ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": "['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ] ",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "كتاب ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "title_of_book",
+													"value": "الخيميائي ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "author",
+													"value": "باولو كويلو ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "publishing_house_and_year",
+													"value": "تجمل 2020",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "language",
+													"value": "العربية ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "edition",
+													"value": "الاصدار الخامس ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "RealEstate",
+							"item": [
+								{
+									"name": "add propertys",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "11",
+													"description": "number",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal 10,2",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0--->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": "['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": ".................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "سامسونج galaxy اسود",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": "['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']   ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ] ",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "شقة",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ownership",
+													"value": "طابو اخضر",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "contract_type",
+													"value": "بيع ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "num_of_room",
+													"value": "10",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "num_of_bathroom",
+													"value": "2",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "num_of_balconies",
+													"value": "3",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "area",
+													"value": "100 متر مربع",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "floor",
+													"value": "الثالث ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "furnished",
+													"value": "1",
+													"description": "bool 1,0",
+													"type": "text"
+												},
+												{
+													"key": "age_of_construction",
+													"value": "3 سنوات",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "readiness",
+													"value": "جاهز",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add offices",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "12",
+													"description": "number ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal 10,2",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0----->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": " ['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": ".............................................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "محل تجاري للايجار  ............",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']   ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ] ,",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "محل تجاري ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ownership",
+													"value": "طابو اخضر",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "contract_type",
+													"value": "ايجار",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "num_of_room",
+													"value": "4",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "num_of_bathroom",
+													"value": "1",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "area",
+													"value": "50 متر مربع",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "floor",
+													"value": "ارضي ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "age_of_construction",
+													"value": "3 سنوات",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add lands",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "13",
+													"description": "Number",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10,2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0--->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": "['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": ".....................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "محل تجاري للايجار  ............",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": "['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']   ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "ownership",
+													"value": "حكم محكمة ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "contract_type",
+													"value": "بيع ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "area",
+													"value": "500 متر مربع",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "nature_of_land",
+													"value": "مستوية",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "street_width",
+													"value": "20 متر",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "facade",
+													"value": "شمالية",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Vehicles",
+							"item": [
+								{
+									"name": "add car",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "7",
+													"description": "Number",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10,2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file  0--->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "مستعمل",
+													"description": " ['new', 'used','مستعمل','جديد'] ",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": ".................................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "سامسونج galaxy اسود",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": "['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "مرسيدس",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": "C 200",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "year",
+													"value": "2000",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "kilometers",
+													"value": "54000 كم",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "fuel_type",
+													"value": "بنزين",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "dipstick",
+													"value": "أوتوماتيك",
+													"description": "['normal', 'automatic', 'half_automatic','عادي','أوتوماتيك','نصف أوتوماتيك'] ",
+													"type": "text"
+												},
+												{
+													"key": "engine_capacity",
+													"value": "2 لتر",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "color",
+													"value": "اسود",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "num_of_doors",
+													"value": "4 ابواب ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "topology_status",
+													"value": "خالي من الحوادث ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add bicycles",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "9",
+													"description": "Number",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10,2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0----->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "مستعمل",
+													"description": "['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "..........................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "سامسونج galaxy اسود",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']     ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ] ",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "كهربائي",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "Cttt",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": "By 3000",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "size",
+													"value": "25 ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "color",
+													"value": "ازرق",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add tires & supplies",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "10",
+													"description": "Number ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal 10,2",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0----->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "مستعمل",
+													"description": "['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "...............",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "سامسونج galaxy اسود",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']     ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add motorcycles",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "8",
+													"description": "Number ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10,2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0----->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "مستعمل",
+													"description": " ['new', 'used','مستعمل','جديد'] ",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "........",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "سامسونج galaxy اسود",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": "['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']     ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "ياماها",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": "Max 400",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "year",
+													"value": "2000",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "kilometers",
+													"value": "54000 كم",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "fuel_type",
+													"value": "بنزين",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "color",
+													"value": "اسود",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "miscellaneous",
+							"item": [
+								{
+									"name": "add fashion",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "18",
+													"description": "Number ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10,2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0---->5",
+													"type": "file",
+													"src": "/Users/ramaabbas/Documents/Work/images-10.jpeg"
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": "['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": ".....................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "فستان سهره",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": "['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']     ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ] ",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "فستان سهره ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "size",
+													"value": "M",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "zara",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "color",
+													"value": "احمر",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "season",
+													"value": "صيفي ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add baby supplies",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "21",
+													"description": "Number ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10.2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0---->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": " ['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "..........",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "عربة اطفال ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']     ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "عربة اطفال ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "size",
+													"value": "متوسط",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "chicco",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "color",
+													"value": "احمر",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": "Le",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "age_group",
+													"value": "من 6 اشهر ل 3 سنوات ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "warranty",
+													"value": "لا يوجد",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add medical supplies",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "22",
+													"description": "Number ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10.2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0--->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": " ['new', 'used','مستعمل','جديد'] ",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "كرسي متحرك",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": "['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']     ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": " ['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "كرسي متحرك",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "size",
+													"value": "Km-5000",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "karma",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "color",
+													"value": "احمر",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": "Le",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "year_of_manufacture",
+													"value": "2023",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "warranty",
+													"value": "لا يوجد",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "material",
+													"value": "المينيوم خفيف ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "max_endurance",
+													"value": "حتى 120 كيلو ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "accessories",
+													"value": "شاحن , بطاريات ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "compatible_vehicles",
+													"value": "all",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add Sports",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "20",
+													"description": "Number ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10,2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0---->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": "['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "...............................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "حذاء رياضي ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": "  ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']     ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "حذاء رياضي ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "size",
+													"value": "مقاس 42",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "nike",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "color",
+													"value": "احمر",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "season",
+													"value": "صيفي ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": "new model",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "year_of_manufacture",
+													"value": "2024",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "accessories",
+													"value": "شنطة اصلية",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "material",
+													"value": "جلد مقاوم للماء",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "special_characteristics",
+													"value": "خفيف الوزن",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "warranty",
+													"value": "لا يوجد",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add beauty products",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "19",
+													"description": "Number ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10.2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0---->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "جديد",
+													"description": "['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "........................",
+													"description": "tsxt",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "فستان سهره",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']     ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": "Mt999",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "zara",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "color",
+													"value": "احمر",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "warranty",
+													"value": "يوجد",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Animals Category",
+							"item": [
+								{
+									"name": "add animal",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "1",
+													"description": "Number",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10.2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0--->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "...........",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "قط شيرازي اليف مطعم للبيع ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']        ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": " ['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "قط منزلي ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "شيرازي",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "age",
+													"value": "1 سنة",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "gender",
+													"value": "male",
+													"description": " ['male', 'female','ذكر','أنثى'] ",
+													"type": "text"
+												},
+												{
+													"key": "vaccinations",
+													"value": "نعم ,جميع التطعيمات الاساسية ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "accessories",
+													"value": "قفص",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add veterinary",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "2",
+													"description": "Number ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10.2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0--->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "...........",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "قط شيرازي اليف مطعم للبيع ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": "['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']        ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": " ['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "service_type",
+													"value": "تطعيم ورعاية طبية منزلية ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "specialization",
+													"value": "قطط وكلاب ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "service_provider_name",
+													"value": "العيادة البيطرية ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "work_time",
+													"value": "من 9 صباحا ل 9 ليلا ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "services_price",
+													"value": "كشف منزلي :160 ,تطعيم :1200 ,قص اظافر واستحمام : 10000",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add animal supply",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "3",
+													"description": "Number",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal(10.2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0---->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "مستعمل",
+													"description": " ['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "..........",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "قط شيرازي اليف مطعم للبيع ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']        ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "قفص نقل ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "test brand",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "appropriate_to",
+													"value": "قطط و كلاب صغيرة",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "model_or_size",
+													"value": "medium",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "color",
+													"value": "اخضر ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Devices Category",
+							"item": [
+								{
+									"name": "add mobile",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "4",
+													"description": "Number",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal/(10.2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file  0---->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "مستعمل",
+													"description": "['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "..............",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "سامسونج galaxy اسود",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ] ",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "هاتف ذكي ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "سامسونج",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": "s23 ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "made_in",
+													"value": "china",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "screen_size",
+													"value": "6.1",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "camera",
+													"value": "18 امامية 64 خلفية ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "supports_sim",
+													"value": "1",
+													"description": "bool 1,0",
+													"type": "text"
+												},
+												{
+													"key": "storage",
+													"value": "256 جيجابايت ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "color",
+													"value": "اسود",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "warranty",
+													"value": "نعم ساري ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "accessories",
+													"value": "شاحن , كابل ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add tv",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "6",
+													"description": "Number ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10.2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0--->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "مستعمل",
+													"description": " ['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "..................................................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "سامسونج galaxy اسود",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']        ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": "['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "شاشه ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "سامسونج",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": "sdd88 tv",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "made_in",
+													"value": "الصين",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "warranty",
+													"value": "نعم ساري ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "accessories",
+													"value": "شاحن , كابل ",
+													"description": "string",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add laptop",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone_number",
+													"value": "09777777777",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "sub_category_id",
+													"value": "5",
+													"description": "Number ",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1000",
+													"description": "decimal (10.2)",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"description": "file 0--->5",
+													"type": "file",
+													"src": [
+														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
+														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+													]
+												},
+												{
+													"key": "state",
+													"value": "مستعمل",
+													"description": "['new', 'used','مستعمل','جديد']",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@gmail.com",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "address_details",
+													"value": " كفرسوسة مقابل الشام سنتر ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "..................",
+													"description": "text",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "لابتوب شبه جديد",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "price_type",
+													"value": "قابل للتفاوض",
+													"description": "['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']        ",
+													"type": "text"
+												},
+												{
+													"key": "governorate",
+													"value": "دمشق",
+													"description": " ['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "لابتوب مكتبي ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "brand",
+													"value": "dell",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "model",
+													"value": " lap 0002",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "made_in",
+													"value": "china",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "screen_size",
+													"value": "6.16",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "processor",
+													"value": "core i7-11",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "ram",
+													"value": "16 جيجابايت",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "storage",
+													"value": "256 جيجابايت ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "screen_card",
+													"value": "intel ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "warranty",
+													"value": "نعم ساري ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "accessories",
+													"value": "شاحن , كابل ",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "operation_system",
+													"value": "windows 11",
+													"description": "string ",
+													"type": "text"
+												},
+												{
+													"key": "ad_type",
+													"value": "product",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{server}}/api/ads",
+											"host": [
+												"{{server}}"
+											],
+											"path": [
+												"api",
+												"ads"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Reviews",
+					"item": [
+						{
+							"name": "add new review",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "rate",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "comment",
+											"value": "good",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/api/products/1/reviews",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1",
+										"reviews"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get product reviews",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{server}}/api/products/1/reviews",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1",
+										"reviews"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Violations",
+					"item": [
+						{
+							"name": "add Violation",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "type",
+											"value": "inappropriate_content",
+											"description": "['inappropriate_content',\n                    'misleading_information',\n                    'duplicate_listing',\n                    'misclassified',\n                ]",
+											"type": "text"
+										},
+										{
+											"key": "notes",
+											"value": "test",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/api/products/1/violations",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1",
+										"violations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get violations",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiI3ZmZhMGRmOWZhYjEwOWJkMGYxMjU4OTQ2MzcwNjM5ZjNlY2VhZTlmMzA0ZjEzOTQ5MmI3ZWVmMzI4N2JjNzgwMzQ1ZmE5ZWFhOWE4YjJhNCIsImlhdCI6MTc1MjU3OTUyMy4zMzY3MDksIm5iZiI6MTc1MjU3OTUyMy4zMzY3MSwiZXhwIjoxNzg0MTE1NTIzLjMyMTM0NCwic3ViIjoiMjMiLCJzY29wZXMiOltdfQ.W14gffWh9lU3p4S71IxdAVeIe7FUClvzNx9Qq0OHr0ACMpxeRaSo-RzVT_iFNCJhQMqNIK1MUItiW9JF4F6N3fHBFqm93ltZmai-Cr16TkJ2IPHhHyI46MZwNd9hPNZkw7TQbIwRhiorH53ai9Z42kli3tqSzeE_KG1qEfBnZTJnRijpvOw99rinQ0BMeCrV7N9oKfXGEVG0bkEFP3gsK5Iek_IFQ0HC2_3LnPLdh8qbHyRO4SAcnSZ2OFIWHvC93lryTCnrQxmkatOWTpdv3osh4qXmwb7AFDdDxl26JwRkJBGfQXRTEpKQ9VJnJ7KENd8COfB8oFyjq_QEdXLvXo8Fl3DiflfScEjVtgSnKcZgEEGwKxa3hU3-hs1zMv4xZ0uX6LPQEA-PWbegd9DAaKWIg-wHyTOt3qlcGghuirPVv4Q40qQmyqkT78HpgGqsJhIM-hNU4kmpPFTczvgTllLiD0-MZMV6r43RfQvKj8HPcqBaNfREQPL98jbX9zdFpDf_SEn9Wu2colpH12gYr9S7x37gPs9RbvYK1_mWBGVAKuHcGGxFzeXlMrsom4bHahkXZ6th4NS2OR7aExHzw2NAdpffOqEH_lS1KHwn8LaJouDHQ7iTpryfW35kV9mRODexSnFQ23DX2DuD2XFJ7rmbZGh3wE9ewW1FJ9HebAY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/admin/products/1/violations",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"products",
+										"1",
+										"violations"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get products (with fillter)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server}}/api/products",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "6",
+									"disabled": true
+								},
+								{
+									"key": "sub_category_id",
+									"value": "24",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "is_featured",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "seller_id",
+									"value": "24",
+									"disabled": true
+								},
+								{
+									"key": "newest",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "محل تجاري للايجار",
+									"disabled": true
+								},
+								{
+									"key": "price_min",
+									"value": "700",
+									"disabled": true
+								},
+								{
+									"key": "price_max",
+									"value": "900",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get my product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiIxMmNmMDY5YWMwMzA0ZWU5MGMyNjdiZDY0OWRiNzg4YWFkMzg1MzA4ODA3OWMxZTQ2ZjgyMzdhZTY4MjcyNTBlN2U5ZTU4MDkwNjc0ZmQ0MCIsImlhdCI6MTc1MjU3Mjk2MS41NTkzNDMsIm5iZiI6MTc1MjU3Mjk2MS41NTkzNDQsImV4cCI6MTc4NDEwODk2MS41NDkzNzYsInN1YiI6IjI0Iiwic2NvcGVzIjpbXX0.YLNJJ0T4lPyPdOEFXDXOOiDvzpUJEg7RVlXMFFiLcll0AV8SZ2DwQ5tBRcSRIxiBszIaBO7k_CyQoTq5FvNP7AgX97U-owShvoJ729rRjjh1GXD0hILsgynLWP5dj4okYW-qBdV9ILa1MiPRAwadnsqUJz0vWNjb_UvFF1P0hhjIfa8qZejolgYVZO_HjfedF7G0r01A0ZSwDNE8yIM_XheMiv7q_ESw0j8gTJa3rQuOk_pR_f9gPqsEpM4Ix9KqHY20QRQ9kXbyDCXn4qwHgBU3qFnZ5hcRhuHvlOFDTxWEMYrNakm_368aJ5CDHD1vUKzOg-10zyAB_TL2_oygcquqACDt29hxIVtxdcvg4wqQtPY52_I28bzQi7JOAA7i_KnDQxFI26UsXugdG8lq9C419jo2buUfBxbfG2ypSRSttlYGzhyKlCMl_FMo6ijIwxBSENlnNAv8-t2AqYhuhhujNc-HyeBDQ15LALexEGIJYQLytlAMrxVlN_nASY7TeoMWQAaDxJc5LmXpwqmeD4pbsz4hcNysGITZoq_HJs2AzOvYjHr7QhufMgFSmQEPx9wK-QD-yCtoe3FnP5KLSlIAJrSVdjNV6A2ljvizfKGwPX99BPLVMIXEghyA6wtOCrIgoxoRYvDcf3rnd_NC3VFLlvR8tJjQehg0KtEgpOM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/products/me?newest=1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"me"
+							],
+							"query": [
+								{
+									"key": "is_featured",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "newest",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark product as featured",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiJhYTg3YTUxNDE2YWI1MmE2NGMwYTBhODUyMzc2NzI1YzIwODZlODViN2EyZWJlMzIzYTZkNDEwYmI3OWNjZjI4ODk5NjNjNjU0Y2VjNWQxZCIsImlhdCI6MTc1MjU3NTQ5MS4yNDAzMzUsIm5iZiI6MTc1MjU3NTQ5MS4yNDAzMzUsImV4cCI6MTc4NDExMTQ5MS4yMjY3MzYsInN1YiI6IjIzIiwic2NvcGVzIjpbXX0.Lqp8SuuqzXc2h8DBOUXVSYo9_qx03q6fyleKG2_eUf68oVgXFmJGBiU7SCAOOw9GrOWO_mkOfQWR-4B4QVkB-G--VCN9eLJp7DBREq1Sh-N8Za8BWi6pcaT-J4TaH-UUo4XxbFmsNyE7u1Kx5laEWHUEwrnX3xXtmF0rzNTueqkpbFt6RC9dkks-BAP013vWUO49BmBZln01N8R3coy8FLqP3P5-YnROCCvIddMA6_TrdMEzO5P_vCic38AicZSRZwklHzgUMAKXTtb-xeTFLgQ-2lA1xWHQH_oga5PHKopmhDxhfHjrWRcoGotqaZBXnHwJsieY3as5S0ZOKCf0hPjjGmIGfX_jBYHsYvMIVqj5S_lgQNLRE7YZmaDg55cSzMqY7W_9ehMWhp0DEkxlMVT5CnHDAvocUqX1uljwpsXWj452bf8qIjNutDtom5lzNBiHCh9Hit_uzBvB6GVlZdQwyXlP0bdrZv2-kWl0bJYgDZn2q2T-_z7g9cVRikimz0qutz85FSgCn9HQ1LqSzGwMvdLixnP8Lu7k2or9vFO1cZPl6iffj6YXyg3XaBNiF1_lCk5pwEtOiOn5zzgoEpnRhQXIG1W2EeTUpnCIzj_vr1lH6W8tPkHhPvu7Gfo1AG_ZA0eL_nCcomzthqi365-zYUTBdmzFPclV8hjEeLc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/admin/products/1/feature",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"products",
+								"1",
+								"feature"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get favourites",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiJhYTg3YTUxNDE2YWI1MmE2NGMwYTBhODUyMzc2NzI1YzIwODZlODViN2EyZWJlMzIzYTZkNDEwYmI3OWNjZjI4ODk5NjNjNjU0Y2VjNWQxZCIsImlhdCI6MTc1MjU3NTQ5MS4yNDAzMzUsIm5iZiI6MTc1MjU3NTQ5MS4yNDAzMzUsImV4cCI6MTc4NDExMTQ5MS4yMjY3MzYsInN1YiI6IjIzIiwic2NvcGVzIjpbXX0.Lqp8SuuqzXc2h8DBOUXVSYo9_qx03q6fyleKG2_eUf68oVgXFmJGBiU7SCAOOw9GrOWO_mkOfQWR-4B4QVkB-G--VCN9eLJp7DBREq1Sh-N8Za8BWi6pcaT-J4TaH-UUo4XxbFmsNyE7u1Kx5laEWHUEwrnX3xXtmF0rzNTueqkpbFt6RC9dkks-BAP013vWUO49BmBZln01N8R3coy8FLqP3P5-YnROCCvIddMA6_TrdMEzO5P_vCic38AicZSRZwklHzgUMAKXTtb-xeTFLgQ-2lA1xWHQH_oga5PHKopmhDxhfHjrWRcoGotqaZBXnHwJsieY3as5S0ZOKCf0hPjjGmIGfX_jBYHsYvMIVqj5S_lgQNLRE7YZmaDg55cSzMqY7W_9ehMWhp0DEkxlMVT5CnHDAvocUqX1uljwpsXWj452bf8qIjNutDtom5lzNBiHCh9Hit_uzBvB6GVlZdQwyXlP0bdrZv2-kWl0bJYgDZn2q2T-_z7g9cVRikimz0qutz85FSgCn9HQ1LqSzGwMvdLixnP8Lu7k2or9vFO1cZPl6iffj6YXyg3XaBNiF1_lCk5pwEtOiOn5zzgoEpnRhQXIG1W2EeTUpnCIzj_vr1lH6W8tPkHhPvu7Gfo1AG_ZA0eL_nCcomzthqi365-zYUTBdmzFPclV8hjEeLc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/favorites",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"favorites"
+							],
+							"query": [
+								{
+									"key": "is_featured",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark as favourite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiJhYTg3YTUxNDE2YWI1MmE2NGMwYTBhODUyMzc2NzI1YzIwODZlODViN2EyZWJlMzIzYTZkNDEwYmI3OWNjZjI4ODk5NjNjNjU0Y2VjNWQxZCIsImlhdCI6MTc1MjU3NTQ5MS4yNDAzMzUsIm5iZiI6MTc1MjU3NTQ5MS4yNDAzMzUsImV4cCI6MTc4NDExMTQ5MS4yMjY3MzYsInN1YiI6IjIzIiwic2NvcGVzIjpbXX0.Lqp8SuuqzXc2h8DBOUXVSYo9_qx03q6fyleKG2_eUf68oVgXFmJGBiU7SCAOOw9GrOWO_mkOfQWR-4B4QVkB-G--VCN9eLJp7DBREq1Sh-N8Za8BWi6pcaT-J4TaH-UUo4XxbFmsNyE7u1Kx5laEWHUEwrnX3xXtmF0rzNTueqkpbFt6RC9dkks-BAP013vWUO49BmBZln01N8R3coy8FLqP3P5-YnROCCvIddMA6_TrdMEzO5P_vCic38AicZSRZwklHzgUMAKXTtb-xeTFLgQ-2lA1xWHQH_oga5PHKopmhDxhfHjrWRcoGotqaZBXnHwJsieY3as5S0ZOKCf0hPjjGmIGfX_jBYHsYvMIVqj5S_lgQNLRE7YZmaDg55cSzMqY7W_9ehMWhp0DEkxlMVT5CnHDAvocUqX1uljwpsXWj452bf8qIjNutDtom5lzNBiHCh9Hit_uzBvB6GVlZdQwyXlP0bdrZv2-kWl0bJYgDZn2q2T-_z7g9cVRikimz0qutz85FSgCn9HQ1LqSzGwMvdLixnP8Lu7k2or9vFO1cZPl6iffj6YXyg3XaBNiF1_lCk5pwEtOiOn5zzgoEpnRhQXIG1W2EeTUpnCIzj_vr1lH6W8tPkHhPvu7Gfo1AG_ZA0eL_nCcomzthqi365-zYUTBdmzFPclV8hjEeLc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/favorites",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sellers and stores",
+			"item": [
+				{
+					"name": "Mark store as featured",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiJhYTg3YTUxNDE2YWI1MmE2NGMwYTBhODUyMzc2NzI1YzIwODZlODViN2EyZWJlMzIzYTZkNDEwYmI3OWNjZjI4ODk5NjNjNjU0Y2VjNWQxZCIsImlhdCI6MTc1MjU3NTQ5MS4yNDAzMzUsIm5iZiI6MTc1MjU3NTQ5MS4yNDAzMzUsImV4cCI6MTc4NDExMTQ5MS4yMjY3MzYsInN1YiI6IjIzIiwic2NvcGVzIjpbXX0.Lqp8SuuqzXc2h8DBOUXVSYo9_qx03q6fyleKG2_eUf68oVgXFmJGBiU7SCAOOw9GrOWO_mkOfQWR-4B4QVkB-G--VCN9eLJp7DBREq1Sh-N8Za8BWi6pcaT-J4TaH-UUo4XxbFmsNyE7u1Kx5laEWHUEwrnX3xXtmF0rzNTueqkpbFt6RC9dkks-BAP013vWUO49BmBZln01N8R3coy8FLqP3P5-YnROCCvIddMA6_TrdMEzO5P_vCic38AicZSRZwklHzgUMAKXTtb-xeTFLgQ-2lA1xWHQH_oga5PHKopmhDxhfHjrWRcoGotqaZBXnHwJsieY3as5S0ZOKCf0hPjjGmIGfX_jBYHsYvMIVqj5S_lgQNLRE7YZmaDg55cSzMqY7W_9ehMWhp0DEkxlMVT5CnHDAvocUqX1uljwpsXWj452bf8qIjNutDtom5lzNBiHCh9Hit_uzBvB6GVlZdQwyXlP0bdrZv2-kWl0bJYgDZn2q2T-_z7g9cVRikimz0qutz85FSgCn9HQ1LqSzGwMvdLixnP8Lu7k2or9vFO1cZPl6iffj6YXyg3XaBNiF1_lCk5pwEtOiOn5zzgoEpnRhQXIG1W2EeTUpnCIzj_vr1lH6W8tPkHhPvu7Gfo1AG_ZA0eL_nCcomzthqi365-zYUTBdmzFPclV8hjEeLc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/admin/store/7/featured",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"store",
+								"7",
+								"featured"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get stores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiJhYTg3YTUxNDE2YWI1MmE2NGMwYTBhODUyMzc2NzI1YzIwODZlODViN2EyZWJlMzIzYTZkNDEwYmI3OWNjZjI4ODk5NjNjNjU0Y2VjNWQxZCIsImlhdCI6MTc1MjU3NTQ5MS4yNDAzMzUsIm5iZiI6MTc1MjU3NTQ5MS4yNDAzMzUsImV4cCI6MTc4NDExMTQ5MS4yMjY3MzYsInN1YiI6IjIzIiwic2NvcGVzIjpbXX0.Lqp8SuuqzXc2h8DBOUXVSYo9_qx03q6fyleKG2_eUf68oVgXFmJGBiU7SCAOOw9GrOWO_mkOfQWR-4B4QVkB-G--VCN9eLJp7DBREq1Sh-N8Za8BWi6pcaT-J4TaH-UUo4XxbFmsNyE7u1Kx5laEWHUEwrnX3xXtmF0rzNTueqkpbFt6RC9dkks-BAP013vWUO49BmBZln01N8R3coy8FLqP3P5-YnROCCvIddMA6_TrdMEzO5P_vCic38AicZSRZwklHzgUMAKXTtb-xeTFLgQ-2lA1xWHQH_oga5PHKopmhDxhfHjrWRcoGotqaZBXnHwJsieY3as5S0ZOKCf0hPjjGmIGfX_jBYHsYvMIVqj5S_lgQNLRE7YZmaDg55cSzMqY7W_9ehMWhp0DEkxlMVT5CnHDAvocUqX1uljwpsXWj452bf8qIjNutDtom5lzNBiHCh9Hit_uzBvB6GVlZdQwyXlP0bdrZv2-kWl0bJYgDZn2q2T-_z7g9cVRikimz0qutz85FSgCn9HQ1LqSzGwMvdLixnP8Lu7k2or9vFO1cZPl6iffj6YXyg3XaBNiF1_lCk5pwEtOiOn5zzgoEpnRhQXIG1W2EeTUpnCIzj_vr1lH6W8tPkHhPvu7Gfo1AG_ZA0eL_nCcomzthqi365-zYUTBdmzFPclV8hjEeLc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/stores?id=12",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"stores"
+							],
+							"query": [
+								{
+									"key": "is_featured",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get sellers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiIwOGU3ZGZkNDg2MmJmN2ZmMzRkMzczMjA4OTFlNTQ0NzUyMjNkY2UwODQyMTVmYzlmNTlhNjMzZTc4MDdjMzQ2YzJlM2ZkMjE2YzU4NmI1NiIsImlhdCI6MTc1MjM5NzQwNy42ODEzMzEsIm5iZiI6MTc1MjM5NzQwNy42ODEzMzEsImV4cCI6MTc4MzkzMzQwNy42NjczOCwic3ViIjoiMjMiLCJzY29wZXMiOltdfQ.N9wcF94kkY_2DcYRsTlE4UoFj5qmhKmL-RHHbhDbmmZJQmGH5Izum2a8Kmoj5S5KMyjjtn0E7wthR6zj2ejRfKoBWgbbcRLBFCjFbg-A_3K3jwHPAszGz7PoInXs7LHPj_5OE65unzMpKQ8U84fwkWhTVSLYqs7GPZrprKwZmqvOrbWvKEeu7DsYwaAPmI_JaOsBy-sW3NCsGUmNzLFSztEVlEiIRtJJNXi63T5xGPf3kdC_zg8mIZBSb3PfqQRQ2X7_LtFHTAyr-__XHEqRECL3tVf1YZM8IzklYm99KbwG3hRxWlQG6gCUmffmUFadCQUjXS5n8fLlcA9H7p3JDj3paOFnhYQpu8pk37iKP3OtI_Y6-vhROck1VzKn7gEXp1iCe3pAQibEAvfe4e6xWJZvhml2LgAr2yG6BOaVmwLucKUm8e6MVKIzGW2fH9EHBlv0D4FoAD0CCkB1aMn9ou7dlC-S_9qVrflaTpNzgepIFZYuwfTQxD9bNKmPMkMKLyOb43mENYhnCWYYatF8rmnhnDJW1O-hqtn33RzfmWz7iGyzXSJxCw4ge6KDOoYXaBmD1QZyRDb7V8xKao6nsttEkHlqz3AopoKphufqu1fvVXrk0q1GEzvdPkGTxEGGGEHkTxWwq5xFNlX4dyxrji20NvOrNNoFtqbQqEIsXIM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/sellers",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"sellers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update seller status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk4MTc3Yy0zNGI1LTcxZWItYjZiNy1kY2VmZTc5ZmI4OWMiLCJqdGkiOiJhZDE3Njc5Mzg3NTk4NmU4M2MxNTAxMTg0OWIwZTU3MTJlZDg3MzYxYjg3YWU5MDcxYzI4M2JhNTZlOTViZWU5NDRhZDkzYTAzYmJkMzAzNSIsImlhdCI6MTc1Mjc0MTEzOC43MTI0MDIsIm5iZiI6MTc1Mjc0MTEzOC43MTI0MDQsImV4cCI6MTc4NDI3NzEzOC42ODI2NDgsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.sGHWkkwCz16-MuvRmnCSmQlQ_YFaE3YTbPbN7p9Uh-_2nSRUQNJ4o8IpLXK67lDAawA5JP4Xh5bVevbCtTg63rvoZlrT0r7TR0fSYJOW4NfNENT46XxMhsNYdUg2GbK58H4aMxrpytScwJlciThc-3-S9fje0NFcSNovQm3eE5xyXtmq-me97dTgH3TfE--aDRaIhbcfq5EVJsu3xJ27AxV6-G_nPH5JhVsAkdnHvZ58xDVUAMYymPAavJWRJM9a6DcLw1KAPO19_vAwrl1CXtxMTwGKI7w0J0mAHVrqd4JYtsqFSUuNB3YKjJDrS3nMx3EY69Dvi7JfcEJyo9HjaIKqoyBsYtimQF2_U2dh16BxAQD988B0G1WGTR9FMWJ56GZH4Qqdc3re8EdKfDSS3_wtWiFROrWEkhfXzzR0D0uzMWkdftUGa9gY5X3PubFQRHOP5hAMbc69HAURwK4l-7FlvItSY7CmVW5NcQqZttIegYCg1eEiMApmZfzzXCO1ys7zwJj7CnGWdxykSPDH1_TNmp1gJdJwA8qP7BLV__2eHc0SwnzabtmyeSIaEm2ayvxatf4gTrhChWOgrK1DkuyTpioXzNCklU4g-h1fUEH16Bq5DBpjMCfePBzOkseCeDJslZG143wA6DeOBX1ZmZRMfldXxNUHNDC9aWEVhOs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "accepted",
+									"description": "in:accepted,rejected'",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/admin/seller/1/status",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"seller",
+								"1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Offers",
+			"item": [
+				{
+					"name": "add new offer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "offerable_type",
+									"value": "product",
+									"description": "in:product,category,sub_category",
+									"type": "text"
+								},
+								{
+									"key": "offerable_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "discount",
+									"description": "in:bogo,discount",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"description": "nullable",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "discount_percentage",
+									"value": "20",
+									"description": "min:1|max:100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/offers",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"offers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get offers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server}}/api/offers",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"offers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "add service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ad_type",
+									"value": "service",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "tets service ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "خدمة تصليح وصيانة سيارات متنقلة ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "governorate",
+									"value": "دمشق ",
+									"description": " ['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "description of service ..............etc",
+									"description": "text",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "حسب نوع الخدمة ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "الخالدية",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "days_hours",
+									"value": "يوميا من 8 حتى 10",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "5363536563",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@email.com",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "images[]",
+									"description": "files  between 0--->5 file ",
+									"type": "file",
+									"src": "postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/ads",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"ads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get services",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/services",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get services for auth user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/services/user",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"services",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "add job vacancy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ad_type",
+									"value": "job",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "وظيفة مندوب مبيعات دوام كامل ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "job_type",
+									"value": "full_time",
+									"description": "['full_time', 'part_time', 'internship', 'remotly', 'temporary_contract']",
+									"type": "text"
+								},
+								{
+									"key": "governorate",
+									"value": "دمشق ",
+									"description": " ['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "البرامكة ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "2 مليون ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "education",
+									"value": "ثانوية عامة على الاقل",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "سنة على الاقل ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "skills",
+									"value": "مهارات تواصل ممتازة ,...........,............",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "..............................",
+									"description": "text",
+									"type": "text"
+								},
+								{
+									"key": "work_hours",
+									"value": "8 ساعات يوميا ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "18/5/2025",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "12334553636",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "job_vacancy",
+									"description": "['job_vacancy', 'search_for_work']",
+									"type": "text"
+								},
+								{
+									"key": "job_title",
+									"value": "مندوب مبيعات ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "images[]",
+									"description": "file 0---->5",
+									"type": "file",
+									"src": "postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/ads",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"ads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add searching_job ads",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ad_type",
+									"value": "job",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "باحث عن عمل اداري ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "job_type",
+									"value": "full_time",
+									"description": "['full_time', 'part_time', 'internship', 'remotly', 'temporary_contract']",
+									"type": "text"
+								},
+								{
+									"key": "governorate",
+									"value": "دمشق ",
+									"description": " ['دمشق',\n                'ريف دمشق',\n                'حلب',\n                'حمص',\n                'حماة',\n                'اللاذقية',\n                'طرطوس',\n                'إدلب',\n                'درعا',\n                'السويداء',\n                'دير الزور',\n                'الرقة',\n                'الحسكة',\n                'القنيطرة',\n            ]",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "الميدان ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "education",
+									"value": "دبلوم اداره مكتبية",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "خبرة سنه واحدة ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "skills",
+									"value": "مهارات تواصل ممتازة ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "..............................",
+									"description": "text",
+									"type": "text"
+								},
+								{
+									"key": "work_hours",
+									"value": "صباحي ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "1234355353",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "search_for_work",
+									"description": "['job_vacancy', 'search_for_work']",
+									"type": "text"
+								},
+								{
+									"key": "job_title",
+									"value": "مساعد اداري ",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "images[]",
+									"description": "file 0---->5",
+									"type": "file",
+									"src": "postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/ads",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"ads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/jobs",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get jobs for auth user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/jobs/user",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"jobs",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chating",
+			"item": [
+				{
+					"name": "check or create new chat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "second_user",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/chat/check-or-create",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"chat",
+								"check-or-create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send message",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "chat_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "hello ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/send-message",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get messages for chat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/chats/1/messages",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"chats",
+								"1",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get chats for user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/chats",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"chats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mark message as read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "reader_id",
+									"value": "3",
+									"description": "id for the auth user",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/broadcast-read",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"broadcast-read"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "byLocation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "distance",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "33.525022",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "36.218760",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/search/byLocation",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"search",
+								"byLocation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "byLocation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "distance",
+											"value": "500",
+											"type": "text"
+										},
+										{
+											"key": "long",
+											"value": "33.525022",
+											"type": "text"
+										},
+										{
+											"key": "lat",
+											"value": "36.218766",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/api/search/byLocation",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"search",
+										"byLocation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Jul 2025 09:56:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"result\": [\n        {\n            \"type\": \"product\",\n            \"id\": 1,\n            \"title\": \"adipisci\",\n            \"distance\": 89,\n            \"long\": 33.525783,\n            \"lat\": 36.219275,\n            \"price\": \"62.00\",\n            \"category\": \"الحيوانات والطب البيطري\"\n        },\n        {\n            \"type\": \"product\",\n            \"id\": 2,\n            \"title\": \"sapiente\",\n            \"distance\": 197,\n            \"long\": 33.523035,\n            \"lat\": 36.219501,\n            \"price\": \"44.00\",\n            \"category\": \"الحيوانات والطب البيطري\"\n        },\n        {\n            \"type\": \"product\",\n            \"id\": 3,\n            \"title\": \"architecto\",\n            \"distance\": 257,\n            \"long\": 33.523069,\n            \"lat\": 36.217082,\n            \"price\": \"65.00\",\n            \"category\": \"الحيوانات والطب البيطري\"\n        },\n        {\n            \"type\": \"product\",\n            \"id\": 4,\n            \"title\": \"et\",\n            \"distance\": 429,\n            \"long\": 33.527392,\n            \"lat\": 36.215418,\n            \"price\": \"93.00\",\n            \"category\": \"الحيوانات والطب البيطري\"\n        },\n        {\n            \"type\": \"job\",\n            \"id\": 5,\n            \"title\": \"Dr.\",\n            \"distance\": 205,\n            \"long\": 33.527076,\n            \"lat\": 36.219562,\n            \"salary\": \"214\",\n            \"job_title\": \"Insurance Underwriter\"\n        },\n        {\n            \"type\": \"job\",\n            \"id\": 6,\n            \"title\": \"sikoe zaver\",\n            \"distance\": 0,\n            \"long\": 33.525022,\n            \"lat\": 36.218766,\n            \"salary\": \"229\",\n            \"job_title\": \"Precious Stone Worker\"\n        },\n        {\n            \"type\": \"service\",\n            \"id\": 1,\n            \"title\": \"Ms.\",\n            \"distance\": 420,\n            \"long\": 33.52224,\n            \"lat\": 36.215732,\n            \"price\": \"36\",\n            \"service_type\": \"sunt\"\n        },\n        {\n            \"type\": \"service\",\n            \"id\": 2,\n            \"title\": \"Prof.\",\n            \"distance\": 413,\n            \"long\": 33.529616,\n            \"lat\": 36.21869,\n            \"price\": \"78\",\n            \"service_type\": \"totam\"\n        },\n        {\n            \"type\": \"service\",\n            \"id\": 3,\n            \"title\": \"Dr.\",\n            \"distance\": 306,\n            \"long\": 33.525495,\n            \"lat\": 36.216043,\n            \"price\": \"22\",\n            \"service_type\": \"reprehenderit\"\n        },\n        {\n            \"type\": \"service\",\n            \"id\": 4,\n            \"title\": \"Prof.\",\n            \"distance\": 93,\n            \"long\": 33.524015,\n            \"lat\": 36.21895,\n            \"price\": \"43\",\n            \"service_type\": \"voluptatum\"\n        },\n        {\n            \"type\": \"service\",\n            \"id\": 6,\n            \"title\": \"sikoe zaver\",\n            \"distance\": 0,\n            \"long\": 33.525022,\n            \"lat\": 36.218766,\n            \"price\": \"67\",\n            \"service_type\": \"aut\"\n        }\n    ],\n    \"message\": \"messages.Success\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "admin || seller",
+			"item": [
+				{
+					"name": "jobs",
+					"item": [
+						{
+							"name": "toggleActivation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "job_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/api/admin/jobs/toggleActivation",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"jobs",
+										"toggleActivation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{server}}/api/admin/jobs/delete?job_id=3",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"jobs",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "job_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "services",
+					"item": [
+						{
+							"name": "toggleActivation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "service_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/api/admin/services/toggleActivation",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"services",
+										"toggleActivation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{server}}/api/admin/services/delete?service_id=5",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"services",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "service_id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "products",
+					"item": [
+						{
+							"name": "toggleActivation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "product_id",
+											"value": "10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/api/admin/products/toggleActivation",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"products",
+										"toggleActivation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{server}}/api/admin/products/delete?product_id=9",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"products",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "product_id",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "users/toggleActivation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/admin/users/toggleActivation",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"users",
+								"toggleActivation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "faker",
+			"item": [
+				{
+					"name": "createFake",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "job",
+									"description": "options [job,service,product]",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "sikoe zaver",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "33.525022",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "36.218766",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "ferko",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/faker/createFake",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"faker",
+								"createFake"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "sikoe zaver",
+											"type": "text"
+										},
+										{
+											"key": "long",
+											"value": "33.525022",
+											"type": "text"
+										},
+										{
+											"key": "lat",
+											"value": "36.218766",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "ferko",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/api/search/fakeProductForTesting",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"search",
+										"fakeProductForTesting"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Jul 2025 13:17:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"result\": [\n        {\n            \"sub_category_id\": 1,\n            \"title\": \"sikoe zaver\",\n            \"governorate\": \"دمشق\",\n            \"address_details\": \"ferko\",\n            \"long\": 33.525022,\n            \"lat\": 36.218766,\n            \"description\": \"Eos rerum aut corrupti minima a quos.\",\n            \"phone_number\": \"0954351679\",\n            \"email\": \"gsmitham@paucek.com\",\n            \"category_id\": 1,\n            \"price\": 82,\n            \"price_type\": \"free\",\n            \"state\": \"new\",\n            \"added_by\": 1,\n            \"views\": 1,\n            \"updated_at\": \"2025-07-21T13:17:39.000000Z\",\n            \"created_at\": \"2025-07-21T13:17:39.000000Z\",\n            \"id\": 13,\n            \"final_price\": 82,\n            \"sub_category\": {\n                \"id\": 1,\n                \"category_id\": 1,\n                \"name\": \"حيوان\",\n                \"image\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2025-07-21T13:14:48.000000Z\",\n                \"updated_at\": \"2025-07-21T13:14:48.000000Z\"\n            },\n            \"category\": {\n                \"id\": 1,\n                \"name\": \"الحيوانات والطب البيطري\",\n                \"image\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2025-07-21T13:14:47.000000Z\",\n                \"updated_at\": \"2025-07-21T13:14:47.000000Z\"\n            }\n        }\n    ],\n    \"message\": \"messages.Success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "fakeProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "sikoe zaver",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "33.525022",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "36.218766",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "ferko",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/faker/fakeProduct",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"faker",
+								"fakeProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fakeService",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "sikoe zaver",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "33.525022",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "36.218766",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "ferko",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/faker/fakeService",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"faker",
+								"fakeService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fakeJob",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "sikoe zaver",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "33.525022",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "36.218766",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "ferko",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/faker/fakeJob",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"faker",
+								"fakeJob"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.request.headers.add(\"Accept: application/json\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "1221",
+			"type": "string"
+		}
+	]
+}
