@@ -36,7 +36,7 @@ class ProductController extends Controller
             'reviews.user',
         ]);
         if ($request->filled('title')) {
-            $query->where('title', 'like', '%' . $request->title . '%');
+            $query->where('title', 'like', '%'.$request->title.'%');
         }
 
         if ($request->filled('category_id')) {
@@ -262,7 +262,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/' . $image->store('products', 'public'),
+                        'image' => 'storage/'.$image->store('products', 'public'),
                     ]);
                 }
             }
@@ -297,7 +297,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/' . $image->store('products', 'public'),
+                        'image' => 'storage/'.$image->store('products', 'public'),
                     ]);
                 }
             }
@@ -327,7 +327,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/' . $image->store('products', 'public'),
+                        'image' => 'storage/'.$image->store('products', 'public'),
                     ]);
                 }
             }
@@ -359,7 +359,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/' . $image->store('products', 'public'),
+                        'image' => 'storage/'.$image->store('products', 'public'),
                     ]);
                 }
             }
@@ -398,7 +398,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/' . $image->store('products', 'public'),
+                        'image' => 'storage/'.$image->store('products', 'public'),
                     ]);
                 }
             }
@@ -433,7 +433,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/' . $image->store('products', 'public'),
+                        'image' => 'storage/'.$image->store('products', 'public'),
                     ]);
                 }
             }
@@ -465,7 +465,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/' . $image->store('products', 'public'),
+                        'image' => 'storage/'.$image->store('products', 'public'),
                     ]);
                 }
             }
@@ -480,7 +480,7 @@ class ProductController extends Controller
                 }
 
                 $product->images()->create([
-                    'image' => 'storage/' . $image->store('products', 'public'),
+                    'image' => 'storage/'.$image->store('products', 'public'),
                 ]);
             }
         }
@@ -567,6 +567,7 @@ class ProductController extends Controller
             return $this->errorResponse(message: 'Not found');
         }
         $favorite->delete();
+
         return $this->successResponse(message: 'product_removed_from_favorite');
     }
 
@@ -617,7 +618,7 @@ class ProductController extends Controller
         $violations = $product->violations()
             ->orderBy('created_at', 'desc')
             ->get()
-            ->map(fn(Violation $v) => [
+            ->map(fn (Violation $v) => [
                 'id' => $v->id,
                 'type' => $v->type,
                 'notes' => $v->notes,

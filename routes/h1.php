@@ -12,23 +12,23 @@ use Illuminate\Support\Facades\Route;
 Route::group(
     [
         'prefix' => 'user',
-        'controller'=> UserController::class,
+        'controller' => UserController::class,
     ],
     function () {
         Route::post('toggleActivation', 'toggleActivation')->middleware(['role:admin']);
-        Route::get('getProfile','getProfile');
-        Route::post('editProfile','editProfile');
+        Route::get('getProfile', 'getProfile');
+        Route::post('editProfile', 'editProfile');
     }
 );
 
 Route::group(
     [
         'prefix' => 'seller',
-        'controller'=> SellerController::class,
+        'controller' => SellerController::class,
     ],
     function () {
-        Route::get('getProfile','getProfile');
-        Route::post('editProfile','editProfile')->middleware(['role:seller']);
+        Route::get('getProfile', 'getProfile');
+        Route::post('editProfile', 'editProfile')->middleware(['role:seller']);
     }
 );
 
@@ -59,8 +59,6 @@ Route::group(
         Route::post('fakeJob', 'fakeJob');
     }
 );
-
-
 
 Route::group(
     [

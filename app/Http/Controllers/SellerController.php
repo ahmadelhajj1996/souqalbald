@@ -19,11 +19,13 @@ class SellerController extends Controller
         $user = Auth::user();
         if ($this->checkIfSeller($user)) {
             $seller = Seller::where('user_id', $user->id)->first();
+
             return $this->successResponse(
                 result: ['seller' => $seller],
                 message: 'profile'
             );
         }
+
         return $this->errorResponse(message: 'not seller');
     }
 
@@ -31,24 +33,26 @@ class SellerController extends Controller
     {
 
         $data = $request->validate([
-            'store_owner_name' => ['required','string','max:55'],
-            'store_name' => ['required','string','max:55'],
-            'address' => ['required','string','max:255'],
-            'description' => ['nullable','string','max:255'],
+            'store_owner_name' => ['required', 'string', 'max:55'],
+            'store_name' => ['required', 'string', 'max:55'],
+            'address' => ['required', 'string', 'max:255'],
+            'description' => ['nullable', 'string', 'max:255'],
         ]);
         if ($request->hasFile('logo')) {
             $logoPath = $request->file('logo')->store('sellers/logos', 'public');
-            $data = array_merge($data,['logo'=>$logoPath]);
+            $data = array_merge($data, ['logo' => $logoPath]);
         }
         $user = Auth::user();
         if ($this->checkIfSeller($user)) {
             $seller = Seller::where('user_id', $user->id)->first();
             $seller->update($data);
+
             return $this->successResponse(
                 result: ['seller' => $seller->fresh()],
                 message: 'seller profile updated'
             );
         }
+
         return $this->errorResponse(message: 'not seller');
     }
 
@@ -57,6 +61,7 @@ class SellerController extends Controller
         if ($user->hasRole('seller') && Seller::where('user_id', $user->id)->exists()) {
             return true;
         }
+
         return false;
     }
 

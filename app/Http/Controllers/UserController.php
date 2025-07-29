@@ -34,6 +34,7 @@ class UserController extends Controller
             ],
         ]);
         Auth::user()->update($data);
+
         return $this->successResponse(
             result: ['user' => Auth::user()],
             message: 'profile updated'

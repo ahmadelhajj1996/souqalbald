@@ -260,6 +260,7 @@ class RegisterController extends Controller
             ], 'auth', 'upgraded_to_seller');
         } catch (Throwable $e) {
             DB::rollBack();
+
             return $this->errorResponse('upgrade_failed', 'auth', 500, [
                 'error' => $e->getMessage(),
             ]);
