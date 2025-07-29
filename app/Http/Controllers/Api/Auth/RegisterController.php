@@ -230,13 +230,13 @@ class RegisterController extends Controller
             if ($request->filled('phone')) {
                 $user->phone = $request->phone;
             }
-            $user->save();
             if ($user->email == null) {
                 return $this->errorResponse(__('this_user_should_add_email'), 'auth', 404);
             }
             if ($user->phone == null) {
                 return $this->errorResponse(__('this_user_should_add_phone'), 'auth', 404);
             }
+            $user->save();
 
             $seller = Seller::updateOrCreate(
                 ['user_id' => $user->id],
@@ -248,13 +248,10 @@ class RegisterController extends Controller
                     'description' => $request->description,
                 ]
             );
-
-            if (! Role::where('name', 'customer')->exists()) {
+            if (! Role::where('name', 'seller')->exists()) {
                 throw new \Exception(__('auth.role_not_found'));
             }
-
-            $user->syncRoles(['customer']);
-
+            $user->syncRoles(['seller']);
             DB::commit();
 
             return $this->successResponse([
@@ -263,7 +260,6 @@ class RegisterController extends Controller
             ], 'auth', 'upgraded_to_seller');
         } catch (Throwable $e) {
             DB::rollBack();
-
             return $this->errorResponse('upgrade_failed', 'auth', 500, [
                 'error' => $e->getMessage(),
             ]);

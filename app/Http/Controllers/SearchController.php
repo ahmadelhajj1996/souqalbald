@@ -139,6 +139,7 @@ class SearchController extends Controller
             'lat' => $product->lat ?? 00.0000,
             'price' => $product->price ?? 'price',
             'category' => $product->category->name ?? 'category',
+            'image' => $product->images()->first(),
         ];
     }
 
@@ -153,6 +154,8 @@ class SearchController extends Controller
             'lat' => $service->lat ?? 00.0000,
             'price' => $service->price ?? 'price',
             'service_type' => $service->type ?? 'type',
+            'image' => $service->images()->first(),
+
         ];
     }
 
@@ -167,6 +170,7 @@ class SearchController extends Controller
             'lat' => $job->lat ?? 00.0000,
             'salary' => $job->salary ?? 'salary',
             'job_title' => $job->job_title ?? 'job_title',
+            'image' => $job->images()->first(),
         ];
     }
 }

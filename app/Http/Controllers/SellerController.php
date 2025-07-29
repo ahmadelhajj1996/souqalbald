@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Seller;
 use App\Traits\ApiResponseTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use Throwable;
@@ -12,6 +13,52 @@ use Throwable;
 class SellerController extends Controller
 {
     use ApiResponseTrait;
+
+    public function getProfile(Request $request)
+    {
+        $user = Auth::user();
+        if ($this->checkIfSeller($user)) {
+            $seller = Seller::where('user_id', $user->id)->first();
+            return $this->successResponse(
+                result: ['seller' => $seller],
+                message: 'profile'
+            );
+        }
+        return $this->errorResponse(message: 'not seller');
+    }
+
+    public function editProfile(Request $request)
+    {
+
+        $data = $request->validate([
+            'store_owner_name' => ['required','string','max:55'],
+            'store_name' => ['required','string','max:55'],
+            'address' => ['required','string','max:255'],
+            'description' => ['nullable','string','max:255'],
+        ]);
+        if ($request->hasFile('logo')) {
+            $logoPath = $request->file('logo')->store('sellers/logos', 'public');
+            $data = array_merge($data,['logo'=>$logoPath]);
+        }
+        $user = Auth::user();
+        if ($this->checkIfSeller($user)) {
+            $seller = Seller::where('user_id', $user->id)->first();
+            $seller->update($data);
+            return $this->successResponse(
+                result: ['seller' => $seller->fresh()],
+                message: 'seller profile updated'
+            );
+        }
+        return $this->errorResponse(message: 'not seller');
+    }
+
+    private function checkIfSeller($user)
+    {
+        if ($user->hasRole('seller') && Seller::where('user_id', $user->id)->exists()) {
+            return true;
+        }
+        return false;
+    }
 
     public function index()
     {

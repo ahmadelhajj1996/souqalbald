@@ -14,8 +14,6 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Middleware\EnsureApiTokenIsValid;
 use App\Http\Middleware\SetLanguage;
-use App\Models\Chat;
-use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware([SetLanguage::class])->group(function () {
@@ -56,6 +54,7 @@ Route::middleware([SetLanguage::class])->group(function () {
 
         Route::get('favorites', [ProductController::class, 'getFavourites']);
         Route::post('favorites', [ProductController::class, 'MarkAsFav']);
+        Route::post('deleteFavorite', [ProductController::class, 'deleteFavorite']);
 
         Route::post('products/{product}/reviews', [ProductController::class, 'addReview']);
         Route::get('products/{product}/reviews', [ProductController::class, 'getReviews']);
@@ -118,21 +117,9 @@ Route::middleware([SetLanguage::class])->group(function () {
     });
 });
 
-Route::get('/test-notification', [NotificationController::class, 'test']);
+// https://github.com/ahmadelhajj1996/souqalbald
 
-Broadcast::channel('chat.{chatId}', function ($user, $chatId) {
-    return Chat::find($chatId) &&
-        ($user->id === Chat::find($chatId)->user_one_id ||
-            $user->id === Chat::find($chatId)->user_two_id);
-});
-Broadcast::channel('chat.{chatId}', function ($user, $chatId) {
-    return \App\Models\Chat::where('id', $chatId)
-        ->where(function ($query) use ($user) {
-            $query->where('user_one_id', $user->id)
-                ->orWhere('user_two_id', $user->id);
-        })
-        ->exists();
-});
+Route::get('/test-notification', [NotificationController::class, 'test']);
 
 Route::post('/broadcast-read', function (\Illuminate\Http\Request $request) {
     event(new \App\Events\MessagesRead($request->message_id, $request->reader_id));

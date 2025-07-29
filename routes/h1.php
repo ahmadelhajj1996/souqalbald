@@ -4,9 +4,33 @@ use App\Http\Controllers\FakerController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SellerController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
+Route::group(
+    [
+        'prefix' => 'user',
+        'controller'=> UserController::class,
+    ],
+    function () {
+        Route::post('toggleActivation', 'toggleActivation')->middleware(['role:admin']);
+        Route::get('getProfile','getProfile');
+        Route::post('editProfile','editProfile');
+    }
+);
+
+Route::group(
+    [
+        'prefix' => 'seller',
+        'controller'=> SellerController::class,
+    ],
+    function () {
+        Route::get('getProfile','getProfile');
+        Route::post('editProfile','editProfile')->middleware(['role:seller']);
+    }
+);
 
 // searchs
 Route::group(
@@ -18,7 +42,6 @@ Route::group(
 
         Route::post('byTitle/{type?}', 'byTitle');
         Route::post('byLocation/{type?}', 'byLocation');
-
     }
 );
 
@@ -34,9 +57,10 @@ Route::group(
         Route::post('fakeProduct', 'fakeProduct');
         Route::post('fakeService', 'fakeService');
         Route::post('fakeJob', 'fakeJob');
-
     }
 );
+
+
 
 Route::group(
     [
@@ -69,11 +93,5 @@ Route::group(
             Route::delete('delete', 'delete');
         });
 
-        Route::group([
-            'prefix' => 'users',
-            'controller' => UserController::class,
-        ], function () {
-            Route::post('toggleActivation', 'toggleActivation');
-        });
     }
 );
