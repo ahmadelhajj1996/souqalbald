@@ -4,6 +4,7 @@
 /public/hot
 /public/storage
 /storage/*.key
+/storage/firebase_credentials.json
 /storage/pail
 /vendor
 .env
