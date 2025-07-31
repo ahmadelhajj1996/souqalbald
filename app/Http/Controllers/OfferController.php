@@ -18,10 +18,16 @@ class OfferController extends Controller
             'type' => 'required|in:bogo,discount',
             'description' => 'nullable|string',
             'discount_percentage' => 'nullable|integer|min:1|max:100',
+            'image' => ['nullable','image']
         ]);
 
         if ($data['type'] === 'discount' && empty($data['discount_percentage'])) {
             return $this->errorResponse('discount_percentage_required', 422);
+        }
+
+        if ($request->hasFile('image')) {
+            $logoPath = $request->file('image')->store('sellers/offers', 'public');
+            $data = array_merge($data, ['image' => $logoPath]);
         }
 
         $typeMap = [

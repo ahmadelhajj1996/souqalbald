@@ -6,11 +6,15 @@ use App\Models\Cost;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 
 trait CurrencyRatesHandler
 {
-    private array $allowdCurrencies = ['SYP', 'USD', 'EUR', 'TRY'];
+    private function allowdCurrencies(): array
+    {
+        return ['SYP', 'USD', 'EUR', 'TRY'];
+    }
 
     public function costs()
     {
@@ -26,8 +30,7 @@ trait CurrencyRatesHandler
                 });
             });
         } catch (\Exception $e) {
-            error_log(json_encode($e));
-            throw $e;
+            Log::error(json_encode($e->getMessage()));
         }
     }
 
@@ -81,19 +84,21 @@ trait CurrencyRatesHandler
             }
             return $this->readYesterdayFile();
         } catch (\Exception $e) {
-            throw $e;
+            Log::error(json_encode($e->getMessage()));
+            return $this->readYesterdayFile();
         }
     }
 
     protected function getRates(array $rates): array
     {
-        return array_intersect_key($rates, array_flip($this->allowdCurrencies));
+        return array_intersect_key($rates, array_flip($this->allowdCurrencies()));
     }
 
-    public function calculate(?array $rates = null): array
+    public function calculate(array $rates = []): array
     {
         $result = [];
-        if ($rates === null) {
+        if (empty($rates)) {
+            Log::info("missing rates for " . class_basename($this::class) . ' id ' . $this->id);
             return $result;
         }
         $cost = $this->getCost();
@@ -111,19 +116,18 @@ trait CurrencyRatesHandler
         return $result;
     }
 
-    protected function getCost(): int|string
+    protected function getCost(): int
     {
-        return $this->{$this->getFieldToCalculateRatesFor()};
+        return (int) $this->{$this->getFieldToCalculateRatesFor()};
     }
 
     protected function getCurrency(): string
     {
         if (
             !request()->has('currency') ||
-            !in_array(request()->input('currency'), $this->allowdCurrencies)
+            !in_array(request()->input('currency'), $this->allowdCurrencies())
         ) {
-            // throw new \Exception("currency is missing");
-            return "SYP";
+            return config('currencies.default', 'SYP');
         }
         return request()->input('currency');
     }
@@ -135,12 +139,14 @@ trait CurrencyRatesHandler
 
     protected function readYesterdayFile(): array
     {
+        Log::info('reading Yesterday File');
         $yesterdayFile = $this->getFilePath(now()->yesterday());
         if (File::exists($yesterdayFile)) {
             $data = json_decode(File::get($yesterdayFile), true);
             return $this->getRates($data['rates']);
         }
-        throw new \Exception('Error fetching currencies change rates');
+        Log::info('Yesterday File is missing couldnt read it');
+        return [];
     }
 
     protected function deleteYesterdayFile(): void
@@ -149,7 +155,7 @@ trait CurrencyRatesHandler
         if (File::exists($yesterdayFile)) {
             File::delete($yesterdayFile);
         }
-        throw new \Exception('Yesterday file is missing');
+        Log::info('Yesterday File is missing couldnt delete it');
     }
 
     protected function getFilePath($date = null): string
@@ -157,9 +163,18 @@ trait CurrencyRatesHandler
         if ($date === null) {
             $date = now();
         }
-        if (!File::exists(storage_path('currencies'))) {
-            File::makeDirectory(storage_path('currencies'), 0755, true);
+        $directory = 'currencies';
+        $ext = 'json';
+        if (!File::exists(storage_path($directory))) {
+            File::makeDirectory(storage_path($directory), 0755, true);
         }
-        return storage_path("currencies/{$this->getCurrency()}-{$date->format("Ymd")}.json");
+        return storage_path("$directory/{$this->getCurrency()}-{$date->format("Ymd")}.$ext");
+    }
+
+    public function checkCurrenciesDirectoryExists($directory)
+    {
+        if (!File::exists(storage_path($directory))) {
+            File::makeDirectory(storage_path($directory), 0755, true);
+        }
     }
 }

@@ -22,6 +22,7 @@ return new class extends Migration
 
             $table->unsignedTinyInteger('discount_percentage')
                 ->nullable();
+            $table->string('image')->nullable();
 
             $table->timestamps();
         });

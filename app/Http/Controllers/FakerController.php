@@ -17,6 +17,7 @@ class FakerController extends Controller
     {
         $request->validate([
             'type' => ['required', 'in:job,service,product'],
+            'currency' => ['required', 'in:SYP,TRY,USD,EUR'],
         ]);
 
         return match ($request->type) {
@@ -33,6 +34,7 @@ class FakerController extends Controller
             'name' => ['nullable', 'string', 'max:100'],
             'lat' => ['required', 'regex:/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$/'],
             'long' => ['required', 'regex:/^[-]?((((1[0-7]\d)|(\d?\d))\.(\d+))|180(\.0+)?)$/'],
+            'currency' => ['required', 'in:SYP,TRY,USD,EUR'],
         ]);
 
         $product = Product::factory()
@@ -54,6 +56,7 @@ class FakerController extends Controller
             'name' => ['nullable', 'string', 'max:100'],
             'lat' => ['required', 'regex:/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$/'],
             'long' => ['required', 'regex:/^[-]?((((1[0-7]\d)|(\d?\d))\.(\d+))|180(\.0+)?)$/'],
+            'currency' => ['required', 'in:SYP,TRY,USD,EUR'],
         ]);
 
         $service = Service::factory()
@@ -75,6 +78,7 @@ class FakerController extends Controller
             'name' => ['nullable', 'string', 'max:100'],
             'lat' => ['required', 'regex:/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$/'],
             'long' => ['required', 'regex:/^[-]?((((1[0-7]\d)|(\d?\d))\.(\d+))|180(\.0+)?)$/'],
+            'currency' => ['required', 'in:SYP,TRY,USD,EUR'],
         ]);
 
         $job = JobAd::factory()
