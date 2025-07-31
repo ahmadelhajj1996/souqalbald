@@ -117,7 +117,6 @@ Route::middleware([SetLanguage::class])->group(function () {
     });
 });
 
-// https://github.com/ahmadelhajj1996/souqalbald
 
 Route::get('/test-notification', [NotificationController::class, 'test']);
 
