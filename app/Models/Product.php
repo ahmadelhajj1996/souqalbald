@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
-use App\Traits\SearchByLocationTrait;
+use App\Traits\CurrencyRatesHandler;
+use App\Traits\SearchByLocationHandler;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use HasFactory,SearchByLocationTrait;
+    use HasFactory;
+    use SearchByLocationHandler;
+    use CurrencyRatesHandler;
 
     protected $appends = ['final_price'];
 

@@ -4,7 +4,8 @@
 
 namespace App\Models;
 
-use App\Traits\SearchByLocationTrait;
+use App\Traits\CurrencyRatesHandler;
+use App\Traits\SearchByLocationHandler;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -13,7 +14,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Service extends Model
 {
     use HasFactory;
-    use SearchByLocationTrait;
+    use SearchByLocationHandler;
+    use CurrencyRatesHandler;
 
     protected $fillable = [
         'added_by',

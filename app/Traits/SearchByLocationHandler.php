@@ -5,24 +5,29 @@ namespace App\Traits;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Schema;
 
-trait SearchByLocationTrait
+trait SearchByLocationHandler
 {
     public function scopeLocation(Builder $query, $latitude, $longitude, $distanceMeters = 200)
     {
-        $this->checkIfFieldsExists();
-        $data = $this->getBoundingBox($latitude, $longitude, $distanceMeters);
+        try {
+            $this->checkIfCordsFieldsExists();
+            $data = $this->getBoundingBox($latitude, $longitude, $distanceMeters);
 
-        return $this->search($query, $latitude, $longitude, $data);
-    }
-
-    private function checkIfFieldsExists()
-    {
-        if (! Schema::hasColumns($this->getTable(), ['long', 'lat'])) {
-            throw new \Exception(class_basename($this::class).' missing longitude, latitude fields');
+            return $this->search($query, $latitude, $longitude, $data);
+        } catch (\Exception $e) {
+            error_log(json_encode($e));
+            throw $e;
         }
     }
 
-    private function getBoundingBox(float $latitude, float $longitude, int $distanceMeters = 200)
+    private function checkIfCordsFieldsExists(): void
+    {
+        if (! Schema::hasColumns($this->getTable(), ['long', 'lat'])) {
+            throw new \Exception(class_basename($this::class) . ' missing longitude, latitude fields');
+        }
+    }
+
+    private function getBoundingBox(float $latitude, float $longitude, int $distanceMeters = 200): array
     {
         $distanceKm = $distanceMeters / 1000;
         $earthRadius = 6371; // km

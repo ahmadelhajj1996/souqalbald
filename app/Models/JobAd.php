@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use App\Traits\SearchByLocationTrait;
+use App\Traits\CurrencyRatesHandler;
+use App\Traits\SearchByLocationHandler;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -11,7 +12,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class JobAd extends Model
 {
     use HasFactory;
-    use SearchByLocationTrait;
+    use SearchByLocationHandler;
+    use CurrencyRatesHandler;
 
     protected $table = 'job_ads';
 
@@ -37,6 +39,10 @@ class JobAd extends Model
         'is_active',
     ];
 
+    protected function getFieldToCalculateRatesFor(): string
+    {
+        return 'salary';
+    }
     /**
      * The user who added this job ad
      */

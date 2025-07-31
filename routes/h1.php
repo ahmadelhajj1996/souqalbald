@@ -90,6 +90,5 @@ Route::group(
             Route::post('toggleActivation', 'toggleActivation');
             Route::delete('delete', 'delete');
         });
-
     }
 );

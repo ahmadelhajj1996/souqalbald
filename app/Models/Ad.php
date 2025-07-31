@@ -2,13 +2,11 @@
 
 namespace App\Models;
 
-use App\Traits\SearchByLocationTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Ad extends Model
 {
-    use SearchByLocationTrait;
 
     protected $fillable = [
         'ad_type',
