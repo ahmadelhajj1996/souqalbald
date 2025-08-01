@@ -20,33 +20,38 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "customer",
+									"value": "test",
 									"type": "text"
 								},
 								{
 									"key": "age",
-									"value": "30",
+									"value": "13",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "customer@gmail.com",
+									"value": "t@t.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "12345678",
+									"value": "password",
 									"type": "text"
 								},
 								{
 									"key": "password_confirmation",
-									"value": "12345678",
+									"value": "password",
 									"type": "text"
 								},
 								{
 									"key": "phone",
-									"value": "99992289",
+									"value": "0911111111",
 									"type": "text"
+								},
+								{
+									"key": "profile_image",
+									"type": "file",
+									"src": "/C:/Users/96393/Pictures/Saved Pictures/Slide1.PNG"
 								}
 							]
 						},
@@ -77,27 +82,22 @@
 							"formdata": [
 								{
 									"key": "store_owner_name",
-									"value": "seller",
+									"value": "seller1",
 									"type": "text"
 								},
 								{
 									"key": "store_name",
-									"value": "store",
+									"value": "store1",
 									"type": "text"
 								},
 								{
 									"key": "address",
-									"value": "Damascus",
+									"value": "Damascus1",
 									"type": "text"
 								},
 								{
-									"key": "logo",
-									"type": "file",
-									"src": "/Users/ramaabbas/Documents/Work/images-10.jpeg"
-								},
-								{
 									"key": "description",
-									"value": "new store",
+									"value": "new store1",
 									"type": "text"
 								},
 								{
@@ -107,7 +107,7 @@
 								},
 								{
 									"key": "email",
-									"value": "seller6@gmail.com",
+									"value": "us1@gmail.com",
 									"type": "text"
 								},
 								{
@@ -119,6 +119,16 @@
 									"key": "password_confirmation",
 									"value": "12345678",
 									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/C:/Users/96393/Pictures/Saved Pictures/Slide1.PNG"
+								},
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "/C:/Users/96393/Pictures/Saved Pictures/Slide9.PNG"
 								}
 							]
 						},
@@ -167,7 +177,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3Zjg3Ni04YmNhLTcwZTItYTczYy0yMmE2Mzk2YWZhMWIiLCJqdGkiOiI5OGFmNDVlZDdmZjIyYWE4NzMzYzYyNGQ4NzNkZDZkNmFhYjZkMmI0NDM3NDQyODY0YTJmNDA3NWE3OTU1ZjdiNzRiMzQ4MmQzZjVkNGM3MyIsImlhdCI6MTc1MjIyMDIyMi40MzExODEsIm5iZiI6MTc1MjIyMDIyMi40MzExODUsImV4cCI6MTc4Mzc1NjIyMi40MTIzODQsInN1YiI6IjExIiwic2NvcGVzIjpbXX0.KwixxkKY2d8GTzEsGF4UhgjZ7fAUXnv33Qv9k4LZ0URxYjCXHUiQk6vdapO0XMHL9-685qO_35PYqkZCNKktCWpuRIHnvJSnldVnrcVGZD09WYmeA-teOG9hKQu4mrccE8OjEIDGbnL-WnKuRtIUJmNQHGhzC3GS1ae39s3hH16bAlNgJpd6YrWfITnijWzke72KOpYdzqBxVJn6z44BeA9TPTS2gP2-pvdS_rRn1BpkZ545ea_dtSDgUNykbmYd3XpXXZo46WLYUaBTSS0pj_Rxb2duXD4AJFhkSkNNVR7YwaDWChRzG_a0fOgmv2st864XJNhG3WEinDrkfzmJgQLT7JZqZk5hSNx25T0-C26Jb7KpbFVy2L2Ffli-gS0ch7IKabIx7kGPnAdKX3p-EZeOqAy66aw2xK3e379wmrpYjob_zYD1EiOZDi67RIdspvHzOa_KTARWfxAnJ-cL8FaknXOnPFdhVCXh5VgX4mzoK-n7Z8aAGL6RbXvRtekB4I0lat6UvC66E5o1NQg9RNqam9MsNV7rJxVylwJGQLYMZngxNlXf7i4cSmROnGyc88XAS76SghElAqsnFAwr7COoJ8oumM4bjtNZ5mVyWOm567upFtXvU_-SFzu3897DzLU6WtkZiES7kCxk_fQ-h2TzFIypvDGz3pSSDU29z24",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
@@ -193,23 +203,29 @@
 									"type": "text"
 								},
 								{
-									"key": "logo",
-									"type": "file",
-									"src": "/Users/ramaabbas/Documents/Work/images-10.jpeg"
-								},
-								{
 									"key": "description",
 									"value": "dessert store",
 									"type": "text"
 								},
 								{
 									"key": "phone",
-									"value": "99992289",
+									"value": "0988888888",
 									"type": "text"
 								},
 								{
 									"key": "email",
 									"value": "customer2@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (15).png"
+								},
+								{
+									"key": "cover_image",
+									"value": "",
 									"type": "text"
 								}
 							]
@@ -767,14 +783,14 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "{{server}}/api/categories/2",
+							"raw": "{{server}}/api/categories/8",
 							"host": [
 								"{{server}}"
 							],
 							"path": [
 								"api",
 								"categories",
-								"2"
+								"8"
 							]
 						}
 					},
@@ -5062,16 +5078,6 @@
 				{
 					"name": "get favourites",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiJhYTg3YTUxNDE2YWI1MmE2NGMwYTBhODUyMzc2NzI1YzIwODZlODViN2EyZWJlMzIzYTZkNDEwYmI3OWNjZjI4ODk5NjNjNjU0Y2VjNWQxZCIsImlhdCI6MTc1MjU3NTQ5MS4yNDAzMzUsIm5iZiI6MTc1MjU3NTQ5MS4yNDAzMzUsImV4cCI6MTc4NDExMTQ5MS4yMjY3MzYsInN1YiI6IjIzIiwic2NvcGVzIjpbXX0.Lqp8SuuqzXc2h8DBOUXVSYo9_qx03q6fyleKG2_eUf68oVgXFmJGBiU7SCAOOw9GrOWO_mkOfQWR-4B4QVkB-G--VCN9eLJp7DBREq1Sh-N8Za8BWi6pcaT-J4TaH-UUo4XxbFmsNyE7u1Kx5laEWHUEwrnX3xXtmF0rzNTueqkpbFt6RC9dkks-BAP013vWUO49BmBZln01N8R3coy8FLqP3P5-YnROCCvIddMA6_TrdMEzO5P_vCic38AicZSRZwklHzgUMAKXTtb-xeTFLgQ-2lA1xWHQH_oga5PHKopmhDxhfHjrWRcoGotqaZBXnHwJsieY3as5S0ZOKCf0hPjjGmIGfX_jBYHsYvMIVqj5S_lgQNLRE7YZmaDg55cSzMqY7W_9ehMWhp0DEkxlMVT5CnHDAvocUqX1uljwpsXWj452bf8qIjNutDtom5lzNBiHCh9Hit_uzBvB6GVlZdQwyXlP0bdrZv2-kWl0bJYgDZn2q2T-_z7g9cVRikimz0qutz85FSgCn9HQ1LqSzGwMvdLixnP8Lu7k2or9vFO1cZPl6iffj6YXyg3XaBNiF1_lCk5pwEtOiOn5zzgoEpnRhQXIG1W2EeTUpnCIzj_vr1lH6W8tPkHhPvu7Gfo1AG_ZA0eL_nCcomzthqi365-zYUTBdmzFPclV8hjEeLc",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -5097,16 +5103,6 @@
 				{
 					"name": "Mark as favourite",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiJhYTg3YTUxNDE2YWI1MmE2NGMwYTBhODUyMzc2NzI1YzIwODZlODViN2EyZWJlMzIzYTZkNDEwYmI3OWNjZjI4ODk5NjNjNjU0Y2VjNWQxZCIsImlhdCI6MTc1MjU3NTQ5MS4yNDAzMzUsIm5iZiI6MTc1MjU3NTQ5MS4yNDAzMzUsImV4cCI6MTc4NDExMTQ5MS4yMjY3MzYsInN1YiI6IjIzIiwic2NvcGVzIjpbXX0.Lqp8SuuqzXc2h8DBOUXVSYo9_qx03q6fyleKG2_eUf68oVgXFmJGBiU7SCAOOw9GrOWO_mkOfQWR-4B4QVkB-G--VCN9eLJp7DBREq1Sh-N8Za8BWi6pcaT-J4TaH-UUo4XxbFmsNyE7u1Kx5laEWHUEwrnX3xXtmF0rzNTueqkpbFt6RC9dkks-BAP013vWUO49BmBZln01N8R3coy8FLqP3P5-YnROCCvIddMA6_TrdMEzO5P_vCic38AicZSRZwklHzgUMAKXTtb-xeTFLgQ-2lA1xWHQH_oga5PHKopmhDxhfHjrWRcoGotqaZBXnHwJsieY3as5S0ZOKCf0hPjjGmIGfX_jBYHsYvMIVqj5S_lgQNLRE7YZmaDg55cSzMqY7W_9ehMWhp0DEkxlMVT5CnHDAvocUqX1uljwpsXWj452bf8qIjNutDtom5lzNBiHCh9Hit_uzBvB6GVlZdQwyXlP0bdrZv2-kWl0bJYgDZn2q2T-_z7g9cVRikimz0qutz85FSgCn9HQ1LqSzGwMvdLixnP8Lu7k2or9vFO1cZPl6iffj6YXyg3XaBNiF1_lCk5pwEtOiOn5zzgoEpnRhQXIG1W2EeTUpnCIzj_vr1lH6W8tPkHhPvu7Gfo1AG_ZA0eL_nCcomzthqi365-zYUTBdmzFPclV8hjEeLc",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -5127,6 +5123,34 @@
 							"path": [
 								"api",
 								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFavourite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "favorite_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/deleteFavorite",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"deleteFavorite"
 							]
 						}
 					},
@@ -5208,14 +5232,14 @@
 					"response": []
 				},
 				{
-					"name": "get sellers",
+					"name": "getProfile",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiIwOGU3ZGZkNDg2MmJmN2ZmMzRkMzczMjA4OTFlNTQ0NzUyMjNkY2UwODQyMTVmYzlmNTlhNjMzZTc4MDdjMzQ2YzJlM2ZkMjE2YzU4NmI1NiIsImlhdCI6MTc1MjM5NzQwNy42ODEzMzEsIm5iZiI6MTc1MjM5NzQwNy42ODEzMzEsImV4cCI6MTc4MzkzMzQwNy42NjczOCwic3ViIjoiMjMiLCJzY29wZXMiOltdfQ.N9wcF94kkY_2DcYRsTlE4UoFj5qmhKmL-RHHbhDbmmZJQmGH5Izum2a8Kmoj5S5KMyjjtn0E7wthR6zj2ejRfKoBWgbbcRLBFCjFbg-A_3K3jwHPAszGz7PoInXs7LHPj_5OE65unzMpKQ8U84fwkWhTVSLYqs7GPZrprKwZmqvOrbWvKEeu7DsYwaAPmI_JaOsBy-sW3NCsGUmNzLFSztEVlEiIRtJJNXi63T5xGPf3kdC_zg8mIZBSb3PfqQRQ2X7_LtFHTAyr-__XHEqRECL3tVf1YZM8IzklYm99KbwG3hRxWlQG6gCUmffmUFadCQUjXS5n8fLlcA9H7p3JDj3paOFnhYQpu8pk37iKP3OtI_Y6-vhROck1VzKn7gEXp1iCe3pAQibEAvfe4e6xWJZvhml2LgAr2yG6BOaVmwLucKUm8e6MVKIzGW2fH9EHBlv0D4FoAD0CCkB1aMn9ou7dlC-S_9qVrflaTpNzgepIFZYuwfTQxD9bNKmPMkMKLyOb43mENYhnCWYYatF8rmnhnDJW1O-hqtn33RzfmWz7iGyzXSJxCw4ge6KDOoYXaBmD1QZyRDb7V8xKao6nsttEkHlqz3AopoKphufqu1fvVXrk0q1GEzvdPkGTxEGGGEHkTxWwq5xFNlX4dyxrji20NvOrNNoFtqbQqEIsXIM",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
@@ -5223,13 +5247,90 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{server}}/api/sellers",
+							"raw": "{{server}}/api/seller/getProfile",
 							"host": [
 								"{{server}}"
 							],
 							"path": [
 								"api",
-								"sellers"
+								"seller",
+								"getProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "store_owner_name",
+									"value": "test edited",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "store_name",
+									"value": "test test store",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "this is a description about tito store",
+									"description": "nullable",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0987786556",
+									"description": "nullable",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "test store address",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"description": "nullable",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "cover_image",
+									"description": "nullable",
+									"type": "file",
+									"src": "/C:/Users/96393/Pictures/Saved Pictures/Slide9.PNG"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/seller/editProfile",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"seller",
+								"editProfile"
 							]
 						}
 					},
@@ -5308,7 +5409,7 @@
 							"formdata": [
 								{
 									"key": "offerable_type",
-									"value": "product",
+									"value": "category",
 									"description": "in:product,category,sub_category",
 									"type": "text"
 								},
@@ -5325,16 +5426,20 @@
 								},
 								{
 									"key": "description",
-									"value": "",
+									"value": "second category offer",
 									"description": "nullable",
-									"type": "text",
-									"disabled": true
+									"type": "text"
 								},
 								{
 									"key": "discount_percentage",
-									"value": "20",
+									"value": "25",
 									"description": "min:1|max:100",
 									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/96393/Pictures/Saved Pictures/Slide1.PNG"
 								}
 							]
 						},
@@ -6505,7 +6610,13 @@
 								},
 								{
 									"key": "name",
-									"value": "ferko",
+									"value": "ferkotio",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "TRY",
+									"description": "options:[SYP,TRY,EUR,USD]",
 									"type": "text"
 								}
 							]
@@ -6640,6 +6751,12 @@
 									"key": "name",
 									"value": "ferko",
 									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "SYP",
+									"description": "options:[SYP,TRY,EUR,USD]",
+									"type": "text"
 								}
 							]
 						},
@@ -6693,6 +6810,12 @@
 								{
 									"key": "name",
 									"value": "ferko",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "USD",
+									"description": "options:[USD,EUR,TRY,SYP]",
 									"type": "text"
 								}
 							]
@@ -6748,6 +6871,12 @@
 									"key": "name",
 									"value": "ferko",
 									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "TRY",
+									"description": "options:[USD,EUR,TRY,SYP]",
+									"type": "text"
 								}
 							]
 						},
@@ -6766,6 +6895,110 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "getProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/user/getProfile",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"getProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "tito XXX",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "15",
+									"description": "nullable",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user1@user.com",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0911111111",
+									"type": "text"
+								},
+								{
+									"key": "profile_image",
+									"type": "file",
+									"src": "/C:/Users/96393/Pictures/Saved Pictures/Slide1.PNG"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/user/editProfile",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"editProfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	],
 	"auth": {
@@ -6803,12 +7036,22 @@
 	"variable": [
 		{
 			"key": "server",
-			"value": "http://127.0.0.1:8000",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "token",
 			"value": "1221",
+			"type": "string"
+		},
+		{
+			"key": "locale",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "remote",
+			"value": "https://phplaravel-1483035-5732108.cloudwaysapps.com/",
 			"type": "string"
 		}
 	]
