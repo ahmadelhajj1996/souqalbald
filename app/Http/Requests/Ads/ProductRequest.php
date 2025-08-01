@@ -59,7 +59,7 @@ class ProductRequest extends FormRequest
             'state' => 'nullable|in:new,used,مستعمل,جديد',
             'lat' => ['required', 'regex:/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$/'],
             'long' => ['required', 'regex:/^[-]?((((1[0-7]\d)|(\d?\d))\.(\d+))|180(\.0+)?)$/'],
-            'currency' => ['required','in:SYP,EUR,USD,TRY'],
+            'currency' => ['required', 'in:SYP,EUR,USD,TRY'],
         ];
 
         if (in_array($subCategoryType, ['animal', 'veterinary', 'supply', 'حيوان', 'بيطري', 'مستلزمات'])) {

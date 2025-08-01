@@ -35,7 +35,7 @@ class JobRequest extends FormRequest
             'images.*' => 'image|mimes:jpg,jpeg,png,webp|max:2048',
             'lat' => ['required', 'regex:/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$/'],
             'long' => ['required', 'regex:/^[-]?((((1[0-7]\d)|(\d?\d))\.(\d+))|180(\.0+)?)$/'],
-            'currency' => ['required','in:SYP,EUR,USD,TRY'],
+            'currency' => ['required', 'in:SYP,EUR,USD,TRY'],
         ];
     }
 

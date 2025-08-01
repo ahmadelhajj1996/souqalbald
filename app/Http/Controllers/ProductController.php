@@ -34,7 +34,7 @@ class ProductController extends Controller
             'subCategory',
             'images',
             'reviews.user',
-            'costs'
+            'costs',
         ]);
         if ($request->filled('title')) {
             $query->where('title', 'like', '%'.$request->title.'%');
@@ -116,7 +116,7 @@ class ProductController extends Controller
                     'created_at',
                     'updated_at',
                 ]),
-                'costs'=>$p->costs,
+                'costs' => $p->costs,
                 'category' => $p->category,
                 'subCategory' => $p->subCategory,
                 'images' => $p->images->pluck('image'),
@@ -156,7 +156,7 @@ class ProductController extends Controller
             'entertainmentProductDetails',
             'miscellaneousProductDetails',
             'electronicsProductDetails',
-            'costs'
+            'costs',
         ])->where('added_by', $userId);
 
         if ($request->filled('is_featured')) {
@@ -208,7 +208,7 @@ class ProductController extends Controller
                     'created_at',
                     'updated_at',
                 ]),
-                'costs'=>$p->costs,
+                'costs' => $p->costs,
                 'category' => $p->category,
                 'subCategory' => $p->subCategory,
                 'images' => $p->images->pluck('image'),

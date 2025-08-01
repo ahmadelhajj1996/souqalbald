@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cost extends Model
 {
-    public $guarded =[];
+    public $guarded = [];
 
     protected $hidden = [
         'costable_id',
@@ -14,5 +14,4 @@ class Cost extends Model
         'created_at',
         'updated_at',
     ];
-
 }

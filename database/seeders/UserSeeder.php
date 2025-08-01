@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $users = User::factory(5)->create();
-        foreach($users as $user){
+        foreach ($users as $user) {
             dump('products');
             Product::factory(2)->for($user, 'seller')->create();
             dump('services');

@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    use CurrencyRatesHandler;
     use HasFactory;
     use SearchByLocationHandler;
-    use CurrencyRatesHandler;
 
     protected $appends = ['final_price'];
 

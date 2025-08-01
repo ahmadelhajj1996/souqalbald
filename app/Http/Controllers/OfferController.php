@@ -18,7 +18,7 @@ class OfferController extends Controller
             'type' => 'required|in:bogo,discount',
             'description' => 'nullable|string',
             'discount_percentage' => 'nullable|integer|min:1|max:100',
-            'image' => ['nullable','image']
+            'image' => ['nullable', 'image'],
         ]);
 
         if ($data['type'] === 'discount' && empty($data['discount_percentage'])) {

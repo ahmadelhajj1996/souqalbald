@@ -14,7 +14,7 @@ class Offer extends Model
         'type',
         'description',
         'discount_percentage',
-        'image'
+        'image',
     ];
 
     public function offerable()

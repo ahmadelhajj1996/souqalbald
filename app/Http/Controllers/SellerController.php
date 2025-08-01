@@ -36,7 +36,7 @@ class SellerController extends Controller
             'store_name' => ['required', 'string', 'max:55'],
             'address' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string', 'max:255'],
-            'phone'=>['nullable','regex:/^09[1-9]{1}\d{7}$/',],
+            'phone' => ['nullable', 'regex:/^09[1-9]{1}\d{7}$/'],
         ]);
 
         if ($request->hasFile('logo')) {

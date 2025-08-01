@@ -11,9 +11,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class JobAd extends Model
 {
+    use CurrencyRatesHandler;
     use HasFactory;
     use SearchByLocationHandler;
-    use CurrencyRatesHandler;
 
     protected $table = 'job_ads';
 
@@ -43,6 +43,7 @@ class JobAd extends Model
     {
         return 'salary';
     }
+
     /**
      * The user who added this job ad
      */

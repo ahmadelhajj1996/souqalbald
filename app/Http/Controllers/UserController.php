@@ -32,12 +32,12 @@ class UserController extends Controller
                 'regex:/^09[1-9]{1}\d{7}$/',
                 Rule::unique('users')->ignore($user->id),
             ],
-            'profile_image' => ['nullable','image'],
+            'profile_image' => ['nullable', 'image'],
         ]);
 
         if ($request->hasFile('profile_image')) {
             $profileImage = $request->file('profile_image')->store('customer/profile', 'public');
-            $data = array_merge($data , ['profile_image'=>$profileImage]);
+            $data = array_merge($data, ['profile_image' => $profileImage]);
         }
         Auth::user()->update($data);
 

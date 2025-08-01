@@ -38,6 +38,7 @@ trait CurrencyRatesHandler
     {
         $this->checkIfPriceFieldExist();
         $result = $this->caculateRates();
+
         return $this->store($result);
     }
 
@@ -45,7 +46,7 @@ trait CurrencyRatesHandler
     {
         if (! Schema::hasColumn($this->getTable(), $this->getFieldToCalculateRatesFor())) {
             throw new \Exception(
-                class_basename($this::class) . ' missing ' . $this->getFieldToCalculateRatesFor()
+                class_basename($this::class).' missing '.$this->getFieldToCalculateRatesFor()
             );
         }
     }
@@ -58,6 +59,7 @@ trait CurrencyRatesHandler
     protected function caculateRates(): array
     {
         $data = $this->getData();
+
         return $this->calculate($data);
     }
 
@@ -66,8 +68,10 @@ trait CurrencyRatesHandler
         $todayFile = $this->getFilePath();
         if (File::exists($todayFile)) {
             $data = json_decode(File::get($todayFile), true);
+
             return $this->getRates($data['rates']);
         }
+
         return $this->getFromApi();
     }
 
@@ -80,11 +84,14 @@ trait CurrencyRatesHandler
                     $this->getFilePath(),
                     json_encode($responce->json(), JSON_PRETTY_PRINT)
                 );
+
                 return $this->getRates($responce->json('rates'));
             }
+
             return $this->readYesterdayFile();
         } catch (\Exception $e) {
             Log::error(json_encode($e->getMessage()));
+
             return $this->readYesterdayFile();
         }
     }
@@ -98,7 +105,8 @@ trait CurrencyRatesHandler
     {
         $result = [];
         if (empty($rates)) {
-            Log::info("missing rates for " . class_basename($this::class) . ' id ' . $this->id);
+            Log::info('missing rates for '.class_basename($this::class).' id '.$this->id);
+
             return $result;
         }
         $cost = $this->getCost();
@@ -113,6 +121,7 @@ trait CurrencyRatesHandler
                 'is_main' => $is_main,
             ];
         }
+
         return $result;
     }
 
@@ -124,11 +133,12 @@ trait CurrencyRatesHandler
     protected function getCurrency(): string
     {
         if (
-            !request()->has('currency') ||
-            !in_array(request()->input('currency'), $this->allowdCurrencies())
+            ! request()->has('currency') ||
+            ! in_array(request()->input('currency'), $this->allowdCurrencies())
         ) {
             return config('currencies.default', 'SYP');
         }
+
         return request()->input('currency');
     }
 
@@ -143,9 +153,11 @@ trait CurrencyRatesHandler
         $yesterdayFile = $this->getFilePath(now()->yesterday());
         if (File::exists($yesterdayFile)) {
             $data = json_decode(File::get($yesterdayFile), true);
+
             return $this->getRates($data['rates']);
         }
         Log::info('Yesterday File is missing couldnt read it');
+
         return [];
     }
 
@@ -165,15 +177,16 @@ trait CurrencyRatesHandler
         }
         $directory = 'currencies';
         $ext = 'json';
-        if (!File::exists(storage_path($directory))) {
+        if (! File::exists(storage_path($directory))) {
             File::makeDirectory(storage_path($directory), 0755, true);
         }
-        return storage_path("$directory/{$this->getCurrency()}-{$date->format("Ymd")}.$ext");
+
+        return storage_path("$directory/{$this->getCurrency()}-{$date->format('Ymd')}.$ext");
     }
 
     public function checkCurrenciesDirectoryExists($directory)
     {
-        if (!File::exists(storage_path($directory))) {
+        if (! File::exists(storage_path($directory))) {
             File::makeDirectory(storage_path($directory), 0755, true);
         }
     }

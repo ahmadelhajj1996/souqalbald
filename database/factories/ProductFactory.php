@@ -45,23 +45,23 @@ class ProductFactory extends Factory
                 dump('mobile');
                 $this->mobile($product);
             }
-            if (in_array($name, ['cars', 'motorcycles', 'bicycles', 'tires & supplies',])) {
+            if (in_array($name, ['cars', 'motorcycles', 'bicycles', 'tires & supplies'])) {
                 dump('cars');
                 $this->car($product);
             }
-            if (in_array($name, ['propertys', 'offices', 'lands',])) {
+            if (in_array($name, ['propertys', 'offices', 'lands'])) {
                 dump('properties');
                 $this->properties($product);
             }
-            if (in_array($name, ['playStation', 'musical instruments', 'books & magazines', 'video games',])) {
+            if (in_array($name, ['playStation', 'musical instruments', 'books & magazines', 'video games'])) {
                 dump('playStation');
                 $this->playStation($product);
             }
-            if (in_array($name, ['fashion', 'beauty products', 'Sports', 'baby supplies', 'medical supplies',])) {
+            if (in_array($name, ['fashion', 'beauty products', 'Sports', 'baby supplies', 'medical supplies'])) {
                 dump('fashion');
                 $this->fashion($product);
             }
-            if (in_array($name, ['miscellaneous', 'furniture',])) {
+            if (in_array($name, ['miscellaneous', 'furniture'])) {
                 dump('funiture');
                 $this->furniture($product);
             }
@@ -73,8 +73,8 @@ class ProductFactory extends Factory
         $product->animalProductDetails()->create([
             'type' => fake()->word,
             'brand' => fake()->company,
-            'age' => mt_rand(1,10),
-            'gender' => fake()->randomElement(['male','female']),
+            'age' => mt_rand(1, 10),
+            'gender' => fake()->randomElement(['male', 'female']),
             'service_type' => fake()->word,
             'specialization' => fake()->word,
             'service_provider_name' => fake()->word,
@@ -117,10 +117,10 @@ class ProductFactory extends Factory
             'brand' => fake()->word,
             'model' => fake()->word,
             'year' => fake()->year,
-            'kilometers' => mt_rand(1000,5000),
+            'kilometers' => mt_rand(1000, 5000),
             'fuel_type' => fake()->word,
             'dipstick' => 'normal',
-            'engine_capacity' => mt_rand(1000,5000),
+            'engine_capacity' => mt_rand(1000, 5000),
             'num_of_doors' => '4',
             'topology_status' => 'clean',
             'size' => 'size',
@@ -134,11 +134,11 @@ class ProductFactory extends Factory
             'type' => fake()->word,
             'ownership' => fake()->word,
             'contract_type' => fake()->word,
-            'num_of_room' => mt_rand(1,5),
-            'num_of_bathroom' => mt_rand(1,5),
-            'num_of_balconies' => mt_rand(1,5),
-            'area' => mt_rand(50,150),
-            'floor' => mt_rand(1,12),
+            'num_of_room' => mt_rand(1, 5),
+            'num_of_bathroom' => mt_rand(1, 5),
+            'num_of_balconies' => mt_rand(1, 5),
+            'area' => mt_rand(50, 150),
+            'floor' => mt_rand(1, 12),
             'furnished' => fake()->boolean,
             'age_of_construction' => fake()->year,
             'readiness' => fake()->boolean,
@@ -164,7 +164,7 @@ class ProductFactory extends Factory
             'accessories' => fake()->word,
             'title_of_book' => fake()->title,
             'language' => fake()->languageCode,
-            'number_of_copies' => mt_rand(100,300),
+            'number_of_copies' => mt_rand(100, 300),
             'author' => fake()->name,
             'publishing_house_and_year' => fake()->date,
             'name' => fake()->name,
@@ -200,7 +200,7 @@ class ProductFactory extends Factory
             'brand' => fake()->word,
             'model' => fake()->word,
             'year_of_manufacture' => fake()->year,
-            'size_or_weight' => mt_rand(5,25),
+            'size_or_weight' => mt_rand(5, 25),
             'color' => fake()->colorName,
             'warranty' => fake()->word,
             'accessories' => fake()->word,

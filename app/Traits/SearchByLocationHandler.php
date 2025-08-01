@@ -23,7 +23,7 @@ trait SearchByLocationHandler
     private function checkIfCordsFieldsExists(): void
     {
         if (! Schema::hasColumns($this->getTable(), ['long', 'lat'])) {
-            throw new \Exception(class_basename($this::class) . ' missing longitude, latitude fields');
+            throw new \Exception(class_basename($this::class).' missing longitude, latitude fields');
         }
     }
 

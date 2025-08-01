@@ -117,7 +117,6 @@ Route::middleware([SetLanguage::class])->group(function () {
     });
 });
 
-
 Route::get('/test-notification', [NotificationController::class, 'test']);
 
 Route::post('/broadcast-read', function (\Illuminate\Http\Request $request) {
