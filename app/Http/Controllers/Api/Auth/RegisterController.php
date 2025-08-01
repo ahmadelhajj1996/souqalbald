@@ -36,15 +36,20 @@ class RegisterController extends Controller
 
     public function customerRegister(CustomerRegisterRequest $request)
     {
-
         try {
             DB::beginTransaction();
+            $profileImage = null;
+            if ($request->hasFile('profile_image')) {
+                $profileImage = $request->file('profile_image')->store('customer/profile', 'public');
+            }
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'phone' => $request->phone,
                 'password' => Hash::make($request->password),
                 'age' => $request->age,
+                'profile_image' => $profileImage,
+
             ]);
             if (! Role::where('name', 'customer')->exists()) {
                 throw new Exception(__('auth.role_not_found'));
@@ -78,6 +83,11 @@ class RegisterController extends Controller
                 $logoPath = $request->file('logo')->store('sellers/logos', 'public');
             }
 
+            $coverPath = null;
+            if ($request->hasFile('cover_image')) {
+                $coverPath = $request->file('cover_image')->store('sellers/covers', 'public');
+            }
+
             $user = User::create([
                 'name' => $request->store_owner_name,
                 'email' => $request->email,
@@ -91,11 +101,11 @@ class RegisterController extends Controller
                 'store_name' => $request->store_name,
                 'address' => $request->address,
                 'logo' => $logoPath ? 'storage/'.$logoPath : null,
+                'cover_image' => $coverPath ? 'storage/'.$coverPath : null,
                 'description' => $request->description,
-
             ]);
 
-            $role = Role::where('name', 'customer')->where('guard_name', 'api')->first();
+            $role = Role::where('name', 'seller')->where('guard_name', 'api')->first();
 
             if (! $role) {
                 throw new \Exception(__('auth.role_not_found'));
@@ -223,6 +233,12 @@ class RegisterController extends Controller
             if ($request->hasFile('logo')) {
                 $logoPath = $request->file('logo')->store('sellers/logos', 'public');
             }
+
+            $coverPath = null;
+            if ($request->hasFile('cover_image')) {
+                $coverPath = $request->file('cover_image')->store('sellers/covers', 'public');
+            }
+
             if ($request->filled('email')) {
                 $user->email = $request->email;
             }
@@ -245,6 +261,7 @@ class RegisterController extends Controller
                     'store_name' => $request->store_name,
                     'address' => $request->address,
                     'logo' => 'storage/'.$logoPath,
+                    'cover_image' => 'storage/'.$coverPath,
                     'description' => $request->description,
                 ]
             );

@@ -21,6 +21,7 @@ class CustomerRegisterRequest extends FormRequest
             'email' => 'nullable|email|unique:users,email',
             'phone' => 'nullable|string|unique:users,phone',
             'password' => 'required|string|min:6|confirmed',
+            'profile_image' => 'nullable|image',
         ];
     }
 
@@ -34,6 +35,7 @@ class CustomerRegisterRequest extends FormRequest
             'phone.unique' => __('auth.phone_unique'),
             'password.required' => __('auth.password_required'),
             'password.confirmed' => __('auth.password_mismatch'),
+            'profile_image.image' => __('auth.logo_must_be_image'),
         ];
     }
 

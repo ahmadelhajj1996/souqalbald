@@ -30,6 +30,7 @@ class User extends Authenticatable
         'phone',
         'age',
         'is_active',
+        'profile_image',
     ];
 
     /**

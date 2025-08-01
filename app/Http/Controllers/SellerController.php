@@ -31,17 +31,24 @@ class SellerController extends Controller
 
     public function editProfile(Request $request)
     {
-
         $data = $request->validate([
             'store_owner_name' => ['required', 'string', 'max:55'],
             'store_name' => ['required', 'string', 'max:55'],
             'address' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string', 'max:255'],
+            'phone'=>['nullable','regex:/^09[1-9]{1}\d{7}$/',],
         ]);
+
         if ($request->hasFile('logo')) {
             $logoPath = $request->file('logo')->store('sellers/logos', 'public');
             $data = array_merge($data, ['logo' => $logoPath]);
         }
+
+        if ($request->hasFile('cover_image')) {
+            $coverPath = $request->file('cover_image')->store('sellers/covers', 'public');
+            $data = array_merge($data, ['cover_image' => $coverPath]);
+        }
+
         $user = Auth::user();
         if ($this->checkIfSeller($user)) {
             $seller = Seller::where('user_id', $user->id)->first();
@@ -155,6 +162,8 @@ class SellerController extends Controller
                     'store_name' => $s->store_name,
                     'address' => $s->address,
                     'logo' => $s->logo,
+                    'cover' => $s->cover_image,
+                    'phone' => $s->phone,
                     'description' => $s->description,
                     'is_featured' => $s->is_featured,
                     'created_at' => $s->created_at,

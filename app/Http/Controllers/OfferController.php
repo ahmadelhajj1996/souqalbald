@@ -54,6 +54,7 @@ class OfferController extends Controller
                 'type' => $o->type,
                 'description' => $o->description,
                 'discount' => $o->discount_percentage,
+                'image' => $o->image,
                 'on' => [
                     'type' => class_basename($o->offerable_type),
                     'data' => $o->offerable,
