@@ -100,8 +100,8 @@ class RegisterController extends Controller
                 'store_owner_name' => $request->store_owner_name,
                 'store_name' => $request->store_name,
                 'address' => $request->address,
-                'logo' => $logoPath ? 'storage/'.$logoPath : null,
-                'cover_image' => $coverPath ? 'storage/'.$coverPath : null,
+                'logo' => $logoPath ? $logoPath : null,
+                'cover_image' => $coverPath ? $coverPath : null,
                 'description' => $request->description,
             ]);
 
@@ -260,8 +260,8 @@ class RegisterController extends Controller
                     'store_owner_name' => $request->store_owner_name,
                     'store_name' => $request->store_name,
                     'address' => $request->address,
-                    'logo' => 'storage/'.$logoPath,
-                    'cover_image' => 'storage/'.$coverPath,
+                    'logo' => $logoPath,
+                    'cover_image' => $coverPath,
                     'description' => $request->description,
                 ]
             );
