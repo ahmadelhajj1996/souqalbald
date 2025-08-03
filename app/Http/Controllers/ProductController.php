@@ -268,7 +268,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/'.$image->store('products', 'public'),
+                        'image' => $image->store('products', 'public'),
                     ]);
                 }
             }
@@ -303,7 +303,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/'.$image->store('products', 'public'),
+                        'image' => $image->store('products', 'public'),
                     ]);
                 }
             }
@@ -333,7 +333,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/'.$image->store('products', 'public'),
+                        'image' => $image->store('products', 'public'),
                     ]);
                 }
             }
@@ -365,7 +365,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/'.$image->store('products', 'public'),
+                        'image' => $image->store('products', 'public'),
                     ]);
                 }
             }
@@ -404,7 +404,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/'.$image->store('products', 'public'),
+                        'image' => $image->store('products', 'public'),
                     ]);
                 }
             }
@@ -439,7 +439,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/'.$image->store('products', 'public'),
+                        'image' => $image->store('products', 'public'),
                     ]);
                 }
             }
@@ -471,7 +471,7 @@ class ProductController extends Controller
                     }
 
                     $product->images()->create([
-                        'image' => 'storage/'.$image->store('products', 'public'),
+                        'image' => $image->store('products', 'public'),
                     ]);
                 }
             }
@@ -486,7 +486,7 @@ class ProductController extends Controller
                 }
 
                 $product->images()->create([
-                    'image' => 'storage/'.$image->store('products', 'public'),
+                    'image' => $image->store('products', 'public'),
                 ]);
             }
         }
