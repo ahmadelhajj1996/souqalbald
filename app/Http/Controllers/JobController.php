@@ -42,17 +42,17 @@ class JobController extends Controller
                 }
 
                 $job->images()->create([
-                    'image' => 'storage/'.$image->store('jobs', 'public'),
+                    'image' => $image->store('jobs', 'public'),
                 ]);
             }
         }
 
-        return $this->successResponse($job->load('images'), 'job', 'job_created_successfully');
+        return $this->successResponse($job->load(['costs','images']), 'job', 'job_created_successfully');
     }
 
     public function index()
     {
-        $query = JobAd::with('images');
+        $query = JobAd::with(['costs','images']);
         $jobs = $query->get();
 
         return $this->successResponse($jobs, 'job', 'jobsـretrievedـsuccessfully');
@@ -61,7 +61,7 @@ class JobController extends Controller
     public function getUserJobs()
     {
         $user = auth()->user();
-        $query = JobAd::where('added_by', $user->id)->with('images');
+        $query = JobAd::where('added_by', $user->id)->with(['costs','images']);
         $jobs = $query->get();
 
         return $this->successResponse($jobs, 'job', 'jobsـretrievedـsuccessfully');

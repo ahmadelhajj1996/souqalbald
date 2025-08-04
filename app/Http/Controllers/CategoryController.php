@@ -89,7 +89,7 @@ class CategoryController extends Controller
             if ($category->image) {
                 Storage::disk('public')->delete($category->image);
             }
-            $data['image'] = 'storage/'.$request->file('image')->store('categories', 'public');
+            $data['image'] = $request->file('image')->store('categories', 'public');
         }
 
         $category->update($data);

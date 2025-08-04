@@ -34,17 +34,17 @@ class ServiceController extends Controller
                 }
 
                 $service->images()->create([
-                    'image' => 'storage/'.$image->store('services', 'public'),
+                    'image' => $image->store('services', 'public'),
                 ]);
             }
         }
 
-        return $this->successResponse($service->load(['images']), 'service', 'service_created_successfully');
+        return $this->successResponse($service->load(['costs','images']), 'service', 'service_created_successfully');
     }
 
     public function index()
     {
-        $query = Service::with('images');
+        $query = Service::with(['costs','images']);
         $services = $query->get();
 
         return $this->successResponse($services, 'service', 'servicesـretrievedـsuccessfully');
@@ -53,7 +53,7 @@ class ServiceController extends Controller
     public function getUserServices()
     {
         $user = auth()->user();
-        $query = Service::where('added_by', $user->id)->with('images');
+        $query = Service::where('added_by', $user->id)->with(['costs','images']);
         $services = $query->get();
 
         return $this->successResponse($services, 'service', 'servicesـretrievedـsuccessfully');

@@ -526,7 +526,7 @@ class ProductController extends Controller
         $user = Auth::user();
 
         $favorites = $user->favorites()
-            ->with('product.images', 'product.category', 'product.subCategory')
+            ->with('product.images', 'product.category', 'product.subCategory','product.costs')
             ->get()
             ->map(function (Favorite $fav) {
                 return [
