@@ -11,183 +11,148 @@ use Illuminate\Support\Facades\Schema;
 
 trait CurrencyRatesHandler
 {
-    private function allowdCurrencies(): array
-    {
-        return ['SYP', 'USD', 'EUR', 'TRY'];
-    }
+	protected function allowedCurrencies(): array
+	{
+		return ['SYP', 'USD', 'EUR', 'TRY'];
+	}
 
-    public function costs()
-    {
-        return $this->morphMany(Cost::class, 'costable');
-    }
+	public function costs()
+	{
+		return $this->morphMany(Cost::class, 'costable');
+	}
 
-    protected static function booted(): void
-    {
-        try {
-            static::created(function (Model $self) {
-                defer(function () use ($self) {
-                    $self->startRatesHandler();
-                });
-            });
-        } catch (\Exception $e) {
-            Log::error(json_encode($e->getMessage()));
-        }
-    }
+	protected static function booted(): void
+	{
+		static::created(function (Model $self) {
+			try {
+				defer(fn() => $self->handleCurrencyRates());
+			} catch (\Throwable $e) {
+				Log::error('Currency Boot Error', ['error' => $e]);
+			}
+		});
+	}
 
-    protected function startRatesHandler()
-    {
-        $this->checkIfPriceFieldExist();
-        $result = $this->caculateRates();
+	protected function handleCurrencyRates(): void
+	{
+		$this->checkIfHasRequiredField();
+		$rates = $this->fetchRates();
+		$data = $this->calculateConvertedCosts($rates);
+		$this->storeCosts($data);
+	}
 
-        return $this->store($result);
-    }
+	protected function checkIfHasRequiredField(): void
+	{
+		if (! Schema::hasColumn($this->getTable(), $this->getFieldToCalculateRatesFor())) {
+			throw new \Exception(
+				class_basename($this::class) . ' missing field: ' . $this->getFieldToCalculateRatesFor()
+			);
+		}
+	}
 
-    protected function checkIfPriceFieldExist(): void
-    {
-        if (! Schema::hasColumn($this->getTable(), $this->getFieldToCalculateRatesFor())) {
-            throw new \Exception(
-                class_basename($this::class).' missing '.$this->getFieldToCalculateRatesFor()
-            );
-        }
-    }
+	protected function getFieldToCalculateRatesFor(): string
+	{
+		return property_exists($this, 'FieldToCalculateRatesFor') ?
+			$this->FieldToCalculateRatesFor :
+			'price';
+	}
 
-    protected function getFieldToCalculateRatesFor(): string
-    {
-        return 'price';
-    }
+	protected function fetchRates(): array
+	{
+		return File::exists($this->todayFilePath())
+			? $this->parseRatesFromFile($this->todayFilePath())
+			: $this->fetchRatesFromApi() ?? $this->parseRatesFromFile($this->yesterdayFilePath());
+	}
 
-    protected function caculateRates(): array
-    {
-        $data = $this->getData();
+	protected function parseRatesFromFile(string $filePath): array
+	{
+		$json = json_decode(File::get($filePath), true);
+		return $this->filterRelevantRates($json['rates'] ?? []);
+	}
 
-        return $this->calculate($data);
-    }
+	protected function fetchRatesFromApi(): ?array
+	{
+		try {
+			$response = Http::retry(2, fn(int $attempt) => $attempt * 100)
+				->get("https://open.er-api.com/v6/latest/{$this->getCurrency()}");
 
-    protected function getData(): array
-    {
-        $todayFile = $this->getFilePath();
-        if (File::exists($todayFile)) {
-            $data = json_decode(File::get($todayFile), true);
+			if ($response->successful()) {
+				$this->writeRatesFile($response->json());
 
-            return $this->getRates($data['rates']);
-        }
+				return $this->filterRelevantRates($response->json('rates'));
+			}
 
-        return $this->getFromApi();
-    }
+			Log::warning('Currency API failed', ['currency' => $this->getCurrency()]);
+		} catch (\Throwable $e) {
+			Log::error('Currency API Exception', ['error' => $e]);
+		}
 
-    protected function getFromApi(): array
-    {
-        try {
-            $responce = Http::get("https://open.er-api.com/v6/latest/{$this->getCurrency()}");
-            if ($responce->successful()) {
-                File::put(
-                    $this->getFilePath(),
-                    json_encode($responce->json(), JSON_PRETTY_PRINT)
-                );
+		return null;
+	}
 
-                return $this->getRates($responce->json('rates'));
-            }
+	protected function writeRatesFile(array $data): void
+	{
+		File::put($this->todayFilePath(), json_encode($data, JSON_PRETTY_PRINT));
+	}
 
-            return $this->readYesterdayFile();
-        } catch (\Exception $e) {
-            Log::error(json_encode($e->getMessage()));
+	protected function filterRelevantRates(array $rates): array
+	{
+		return array_intersect_key($rates, array_flip($this->allowedCurrencies()));
+	}
 
-            return $this->readYesterdayFile();
-        }
-    }
+	protected function calculateConvertedCosts(array $rates): array
+	{
+		$result = [];
+		$cost = $this->getCost();
+		$baseCurrency = $this->getCurrency();
+		foreach ($rates as $currency => $rate) {
+			$result[] = [
+				'cost' => $cost,
+				'from_currency' => $baseCurrency,
+				'to_currency' => $currency,
+				'rate' => $rate,
+				'cost_after_change' => $cost * $rate,
+				'is_main' => $currency === $baseCurrency,
+			];
+		}
+		if (empty($result)) {
+			Log::info('Currency: Missing rates for ' . class_basename($this::class) . ' id ' . $this->id);
+		}
+		return $result;
+	}
 
-    protected function getRates(array $rates): array
-    {
-        return array_intersect_key($rates, array_flip($this->allowdCurrencies()));
-    }
+	protected function storeCosts(array $data): void
+	{
+		$this->costs()->createMany($data);
+	}
 
-    public function calculate(array $rates = []): array
-    {
-        $result = [];
-        if (empty($rates)) {
-            Log::info('missing rates for '.class_basename($this::class).' id '.$this->id);
+	protected function getCurrency(): string
+	{
+		$currency = request()->input('currency');
+		return in_array($currency, $this->allowedCurrencies())
+			? $currency
+			: config('currencies.default', 'TRY');
+	}
 
-            return $result;
-        }
-        $cost = $this->getCost();
-        foreach ($rates as $currency => $rate) {
-            $is_main = $currency !== $this->getCurrency() ? false : true;
-            $result[] = [
-                'cost' => $cost,
-                'from_currency' => $this->getCurrency(),
-                'to_currency' => $currency,
-                'rate' => $rate,
-                'cost_after_change' => $cost * $rate,
-                'is_main' => $is_main,
-            ];
-        }
+	protected function getCost(): float
+	{
+		return (float) $this->{$this->getFieldToCalculateRatesFor()};
+	}
 
-        return $result;
-    }
+	protected function todayFilePath(): string
+	{
+		return $this->buildFilePath(now());
+	}
 
-    protected function getCost(): int
-    {
-        return (int) $this->{$this->getFieldToCalculateRatesFor()};
-    }
+	protected function yesterdayFilePath(): string
+	{
+		return $this->buildFilePath(now()->yesterday());
+	}
 
-    protected function getCurrency(): string
-    {
-        if (
-            ! request()->has('currency') ||
-            ! in_array(request()->input('currency'), $this->allowdCurrencies())
-        ) {
-            return config('currencies.default', 'SYP');
-        }
-
-        return request()->input('currency');
-    }
-
-    protected function store(array $data)
-    {
-        return $this->costs()->createMany($data);
-    }
-
-    protected function readYesterdayFile(): array
-    {
-        Log::info('reading Yesterday File');
-        $yesterdayFile = $this->getFilePath(now()->yesterday());
-        if (File::exists($yesterdayFile)) {
-            $data = json_decode(File::get($yesterdayFile), true);
-
-            return $this->getRates($data['rates']);
-        }
-        Log::info('Yesterday File is missing couldnt read it');
-
-        return [];
-    }
-
-    protected function deleteYesterdayFile(): void
-    {
-        $yesterdayFile = $this->getFilePath(now()->yesterday());
-        if (File::exists($yesterdayFile)) {
-            File::delete($yesterdayFile);
-        }
-        Log::info('Yesterday File is missing couldnt delete it');
-    }
-
-    protected function getFilePath($date = null): string
-    {
-        if ($date === null) {
-            $date = now();
-        }
-        $directory = 'currencies';
-        $ext = 'json';
-        if (! File::exists(storage_path($directory))) {
-            File::makeDirectory(storage_path($directory), 0755, true);
-        }
-
-        return storage_path("$directory/{$this->getCurrency()}-{$date->format('Ymd')}.$ext");
-    }
-
-    public function checkCurrenciesDirectoryExists($directory)
-    {
-        if (! File::exists(storage_path($directory))) {
-            File::makeDirectory(storage_path($directory), 0755, true);
-        }
-    }
+	protected function buildFilePath($date): string
+	{
+		$directory = 'currencies';
+		File::ensureDirectoryExists(storage_path($directory));
+		$filename = "{$this->getCurrency()}-{$date->format('Ymd')}.json";
+		return storage_path("$directory/$filename");
+	}
 }

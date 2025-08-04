@@ -16,6 +16,7 @@ class JobAd extends Model
     use SearchByLocationHandler;
 
     protected $table = 'job_ads';
+    protected $FieldToCalculateRatesFor = 'salary';
 
     protected $fillable = [
         'added_by',
@@ -38,11 +39,6 @@ class JobAd extends Model
         'type',
         'is_active',
     ];
-
-    protected function getFieldToCalculateRatesFor(): string
-    {
-        return 'salary';
-    }
 
     /**
      * The user who added this job ad
