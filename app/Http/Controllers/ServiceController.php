@@ -26,6 +26,8 @@ class ServiceController extends Controller
             'phone_number' => $request->phone_number,
             'email' => $request->email,
             'added_by' => $user->id,
+            'long' => $request->long,
+            'lat' => $request->lat,
         ]);
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $index => $image) {

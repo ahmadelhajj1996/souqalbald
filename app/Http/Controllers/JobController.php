@@ -33,6 +33,8 @@ class JobController extends Controller
             'added_by' => $user->id,
             'job_title' => $request->job_title,
             'type' => $request->type,
+            'long' => $request->long,
+            'lat' => $request->lat,
         ]);
 
         if ($request->hasFile('images')) {
