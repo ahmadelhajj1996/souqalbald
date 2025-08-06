@@ -475,4 +475,40 @@ class RegisterController extends Controller
             return $this->errorResponse(message: 'Error logging out');
         }
     }
+
+    public function redirectToProvider($provider)
+    {
+        return Socialite::driver($provider)->stateless()->redirect();
+    }
+
+    public function handleProviderCallback($provider)
+    {
+        try {
+            $socialUser = Socialite::driver($provider)->user();
+
+            $user = User::firstOrCreate([
+                'email' => $socialUser->getEmail(),
+            ], [
+                'name' => $socialUser->getName() ?? $socialUser->getNickname() ?? 'Social User',
+                'password' => Hash::make(uniqid()),
+                'provider_id' => $socialUser->getId(),
+                'provider' => $provider,
+            ]);
+
+            if (! $user->hasRole('customer')) {
+                $user->assignRole('customer');
+            }
+
+            $token = $user->createToken('SocialCustomerToken')->accessToken;
+
+            return response()->json([
+                'token' => $token,
+                'user' => $user,
+            ]);
+        } catch (\Throwable $e) {
+            return response()->json([
+                'error' => $e->getMessage(),
+            ], 500);
+        }
+    }
 }

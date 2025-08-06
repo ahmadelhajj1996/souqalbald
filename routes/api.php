@@ -23,7 +23,14 @@ Route::middleware([SetLanguage::class])->group(function () {
     Route::post('seller/register', [RegisterController::class, 'sellerRegister']);
     Route::post('guest/register', [RegisterController::class, 'guestRegister']);
 
-    Route::post('register/social/{provider}', [RegisterController::class, 'socialRegister']);
+    // Route::post('register/social/{provider}', [RegisterController::class, 'socialRegister']);
+    // Route::get('/auth/google/callback', [RegisterController::class, 'socialResponse']);
+
+    // Redirect to provider login page
+    Route::get('register/social/{provider}', [RegisterController::class, 'redirectToProvider']);
+    // Handle callback from provider
+    Route::get('register/social/{provider}/callback', [RegisterController::class, 'handleProviderCallback']);
+
 
     Route::post('password/forgot', [RegisterController::class, 'sendResetOtp']);
     Route::post('password/verify-otp', [RegisterController::class, 'verifyOtp']);
