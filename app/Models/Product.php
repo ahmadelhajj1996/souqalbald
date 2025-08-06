@@ -15,6 +15,8 @@ class Product extends Model
 
     protected $appends = ['final_price', 'seller_phone'];
 
+    protected $FieldToCalculateRatesFor = 'final_price';
+
     protected $fillable = [
         'sub_category_id',
         'title',

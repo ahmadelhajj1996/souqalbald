@@ -42,10 +42,11 @@ trait CurrencyRatesHandler
 
     protected function checkIfHasRequiredField(): void
     {
+        if(in_array($this->getFieldToCalculateRatesFor(),$this->toArray())){
+            return;
+        }
         if (! Schema::hasColumn($this->getTable(), $this->getFieldToCalculateRatesFor())) {
-            throw new \Exception(
-                class_basename($this::class).' missing field: '.$this->getFieldToCalculateRatesFor()
-            );
+            Log::error(class_basename($this::class).' missing field: '.$this->getFieldToCalculateRatesFor());
         }
     }
 
