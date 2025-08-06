@@ -16,6 +16,7 @@ Route::group(
     ],
     function () {
         Route::post('toggleActivation', 'toggleActivation')->middleware(['role:admin']);
+        Route::get('getUser', 'getUser');
         Route::get('getProfile', 'getProfile');
         Route::post('editProfile', 'editProfile');
     }

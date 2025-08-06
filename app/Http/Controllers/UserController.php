@@ -47,6 +47,21 @@ class UserController extends Controller
         );
     }
 
+    public function getUser(Request $request)
+    {
+        $request->validate([
+            'user_id' => ['required', 'exists:users,id'],
+        ]);
+        $user = User::find($request->input('user_id'));
+        if ($user !== null) {
+            return $this->successResponse(
+                result: ['user' => $user],
+                message: 'user'
+            );
+        }
+        return $this->errorResponse('Not found');
+    }
+
     public function toggleActivation(Request $request)
     {
         $request->validate([
