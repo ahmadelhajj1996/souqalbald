@@ -134,7 +134,7 @@ trait CurrencyRatesHandler
 
         return in_array($currency, $this->allowedCurrencies())
             ? $currency
-            : config('currencies.default', 'TRY');
+            : config('currencies.default', 'SYP');
     }
 
     protected function getCost(): float
