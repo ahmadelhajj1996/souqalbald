@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Seller;
+use App\Models\User;
 use App\Traits\ApiResponseTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -63,9 +64,25 @@ class SellerController extends Controller
         return $this->errorResponse(message: 'not seller');
     }
 
+    public function getSeller(Request $request)
+    {
+        $request->validate([
+            'user_id' => ['required', 'exists:users,id']
+        ]);
+
+        $user = User::find($request->input('user_id'));
+        if ($this->checkIfSeller($user)) {
+            $seller = Seller::where('user_id', $user->id)->first();
+            return $this->successResponse(result: [
+                'seller' => $seller
+            ]);
+        }
+        return $this->errorResponse(message: 'not seller');
+    }
+
     private function checkIfSeller($user)
     {
-        if ($user->hasRole('seller') && Seller::where('user_id', $user->id)->exists()) {
+        if ($user !== null && $user->hasRole('seller') && Seller::where('user_id', $user->id)->exists()) {
             return true;
         }
 

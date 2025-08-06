@@ -27,8 +27,10 @@ Route::group(
         'controller' => SellerController::class,
     ],
     function () {
-        Route::get('getProfile', 'getProfile');
+        Route::get('getSeller', 'getSeller');
+        Route::get('getProfile', 'getProfile')->middleware(['role:seller']);
         Route::post('editProfile', 'editProfile')->middleware(['role:seller']);
+
     }
 );
 

@@ -5382,6 +5382,41 @@
 					"response": []
 				},
 				{
+					"name": "getSeller",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/seller/getSeller?user_id=3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"seller",
+								"getSeller"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "editProfile",
 					"request": {
 						"auth": {
@@ -5841,13 +5876,13 @@
 								},
 								{
 									"key": "title",
-									"value": "وظيفة مندوب مبيعات دوام كامل ",
+									"value": "باحث عن عمل إداري",
 									"description": "string",
 									"type": "text"
 								},
 								{
 									"key": "job_type",
-									"value": "full_time",
+									"value": "internship",
 									"description": "['full_time', 'part_time', 'internship', 'remotly', 'temporary_contract']",
 									"type": "text"
 								},
@@ -5865,7 +5900,7 @@
 								},
 								{
 									"key": "salary",
-									"value": "2 مليون ",
+									"value": "3 مليون ",
 									"description": "string",
 									"type": "text"
 								},
@@ -5883,13 +5918,13 @@
 								},
 								{
 									"key": "skills",
-									"value": "مهارات تواصل ممتازة ,...........,............",
+									"value": "مهارات تواصل ممتازة , word,powerpoint",
 									"description": "string",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "..............................",
+									"value": "new description",
 									"description": "text",
 									"type": "text"
 								},
