@@ -60,6 +60,17 @@ Route::group(
     }
 );
 
+// fakers
+Route::group(
+    [
+        'prefix' => 'products',
+        'controller' => ProductController::class,
+    ],
+    function (): void {
+        Route::get('productsDetailsKeys','productsDetailsKeys');
+    }
+);
+
 Route::group(
     [
         'middleware' => ['role:admin|seller'],

@@ -40,6 +40,10 @@ class JobAd extends Model
         'is_active',
     ];
 
+    protected $appends = [
+        'seller_phone',
+    ];
+
     /**
      * The user who added this job ad
      */
@@ -54,5 +58,16 @@ class JobAd extends Model
     public function images(): HasMany
     {
         return $this->hasMany(JobAdImage::class);
+    }
+
+    public function getSellerPhoneAttribute()
+    {
+        $user = User::where('id',$this->added_by)->first();
+        if($user === null){
+            return '';
+        }
+        return $user->seller !== null ?
+            $user->seller?->phone :
+            $user->phone;
     }
 }

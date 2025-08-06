@@ -33,6 +33,10 @@ class Service extends Model
         'is_active',
     ];
 
+    protected $appends = [
+        'seller_phone',
+    ];
+
     /**
      * The user who added this service
      */
@@ -47,5 +51,16 @@ class Service extends Model
     public function images(): HasMany
     {
         return $this->hasMany(ServiceImage::class);
+    }
+
+    public function getSellerPhoneAttribute()
+    {
+        $user = User::where('id',$this->added_by)->first();
+        if($user === null){
+            return '';
+        }
+        return $user->seller !== null ?
+            $user->seller?->phone :
+            $user->phone;
     }
 }

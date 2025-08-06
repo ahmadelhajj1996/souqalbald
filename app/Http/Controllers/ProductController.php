@@ -3,8 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Ads\ProductRequest;
+use App\Models\AnimalProductDetail;
+use App\Models\CarProductDetail;
+use App\Models\DevicesProductDetail;
+use App\Models\ElectronicsProductDetail;
+use App\Models\EntertainmentProductDetail;
 use App\Models\Favorite;
+use App\Models\MiscellaneousProductDetail;
 use App\Models\Product;
+use App\Models\RealEstateProductDetail;
 use App\Models\Review;
 use App\Models\SubCategory;
 use App\Models\Violation;
@@ -37,7 +44,7 @@ class ProductController extends Controller
             'costs',
         ]);
         if ($request->filled('title')) {
-            $query->where('title', 'like', '%'.$request->title.'%');
+            $query->where('title', 'like', '%' . $request->title . '%');
         }
 
         if ($request->filled('category_id')) {
@@ -113,15 +120,19 @@ class ProductController extends Controller
                     'address_details',
                     'long',
                     'lat',
+                    'seller_phone',
                     'created_at',
                     'updated_at',
                 ]),
                 'costs' => $p->costs,
                 'category' => $p->category,
                 'subCategory' => $p->subCategory,
+                // 'costs' => $p->costs()->get(['cost_after_change','to_currency',]),
+                // 'category' => $p->category->only(['id','name','image']),
+                // 'subCategory' => $p->subCategory->only(['id','name','image']),
                 'images' => $p->images->pluck('image'),
                 'details' => $details,
-                'reviews' => $p->reviews->map->only(['id', 'rate', 'comment', 'created_at'])
+                'reviews' => $p->reviews->only(['id', 'rate', 'comment', 'created_at'])
                     ->map(function ($r) use ($p) {
                         $r['user'] = $p
                             ->reviews
@@ -205,6 +216,7 @@ class ProductController extends Controller
                     'is_featured',
                     'long',
                     'lat',
+                    'seller_phone',
                     'created_at',
                     'updated_at',
                 ]),
@@ -526,7 +538,7 @@ class ProductController extends Controller
         $user = Auth::user();
 
         $favorites = $user->favorites()
-            ->with('product.images', 'product.category', 'product.subCategory','product.costs')
+            ->with('product.images', 'product.category', 'product.subCategory', 'product.costs')
             ->get()
             ->map(function (Favorite $fav) {
                 return [
@@ -624,7 +636,7 @@ class ProductController extends Controller
         $violations = $product->violations()
             ->orderBy('created_at', 'desc')
             ->get()
-            ->map(fn (Violation $v) => [
+            ->map(fn(Violation $v) => [
                 'id' => $v->id,
                 'type' => $v->type,
                 'notes' => $v->notes,
@@ -677,6 +689,24 @@ class ProductController extends Controller
         $product->update(['is_active' => ! $product->is_active]);
 
         return $this->successResponse(message: 'updated');
+    }
+
+    public function productsDetailsKeys()
+    {
+        $models = [
+            AnimalProductDetail::class,
+            DevicesProductDetail::class,
+            CarProductDetail::class,
+            RealEstateProductDetail::class,
+            EntertainmentProductDetail::class,
+            MiscellaneousProductDetail::class,
+            ElectronicsProductDetail::class,
+        ];
+        $result = [];
+        foreach($models as  $model){
+            $result[class_basename($model)] = (new $model())->getFillable();
+        }
+        return $this->successResponse($result);
     }
 
     public function delete(Request $request)

@@ -30,6 +30,7 @@ class UserFactory extends Factory
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
             'is_active' => true,
+            'phone' => fake()->regexify('09[1-9]{1}\d{7}')
         ];
     }
 

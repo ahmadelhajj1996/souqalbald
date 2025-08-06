@@ -20,38 +20,38 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "test",
+									"value": "maya",
 									"type": "text"
 								},
 								{
 									"key": "age",
-									"value": "13",
+									"value": "20",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "t@t.com",
+									"value": "m@m.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "password",
+									"value": "123456",
 									"type": "text"
 								},
 								{
 									"key": "password_confirmation",
-									"value": "password",
+									"value": "123456",
 									"type": "text"
 								},
 								{
 									"key": "phone",
-									"value": "0911111111",
+									"value": "0911111112",
 									"type": "text"
 								},
 								{
 									"key": "profile_image",
 									"type": "file",
-									"src": "/C:/Users/96393/Pictures/Saved Pictures/Slide1.PNG"
+									"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (15).png"
 								}
 							]
 						},
@@ -82,12 +82,12 @@
 							"formdata": [
 								{
 									"key": "store_owner_name",
-									"value": "seller1",
+									"value": "maya",
 									"type": "text"
 								},
 								{
 									"key": "store_name",
-									"value": "store1",
+									"value": "maya",
 									"type": "text"
 								},
 								{
@@ -107,28 +107,28 @@
 								},
 								{
 									"key": "email",
-									"value": "us1@gmail.com",
+									"value": "m@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "12345678",
+									"value": "123456",
 									"type": "text"
 								},
 								{
 									"key": "password_confirmation",
-									"value": "12345678",
+									"value": "123456",
 									"type": "text"
 								},
 								{
 									"key": "logo",
 									"type": "file",
-									"src": "/C:/Users/96393/Pictures/Saved Pictures/Slide1.PNG"
+									"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (15).png"
 								},
 								{
 									"key": "cover_image",
 									"type": "file",
-									"src": "/C:/Users/96393/Pictures/Saved Pictures/Slide9.PNG"
+									"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (33).png"
 								}
 							]
 						},
@@ -214,19 +214,20 @@
 								},
 								{
 									"key": "email",
-									"value": "customer2@gmail.com",
-									"type": "text",
-									"disabled": true
+									"value": "m@mm.com",
+									"type": "text"
 								},
 								{
 									"key": "logo",
 									"type": "file",
-									"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (15).png"
+									"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (15).png",
+									"disabled": true
 								},
 								{
 									"key": "cover_image",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -469,6 +470,18 @@
 									"key": "password",
 									"value": "password",
 									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "m@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -592,7 +605,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiIwOGU3ZGZkNDg2MmJmN2ZmMzRkMzczMjA4OTFlNTQ0NzUyMjNkY2UwODQyMTVmYzlmNTlhNjMzZTc4MDdjMzQ2YzJlM2ZkMjE2YzU4NmI1NiIsImlhdCI6MTc1MjM5NzQwNy42ODEzMzEsIm5iZiI6MTc1MjM5NzQwNy42ODEzMzEsImV4cCI6MTc4MzkzMzQwNy42NjczOCwic3ViIjoiMjMiLCJzY29wZXMiOltdfQ.N9wcF94kkY_2DcYRsTlE4UoFj5qmhKmL-RHHbhDbmmZJQmGH5Izum2a8Kmoj5S5KMyjjtn0E7wthR6zj2ejRfKoBWgbbcRLBFCjFbg-A_3K3jwHPAszGz7PoInXs7LHPj_5OE65unzMpKQ8U84fwkWhTVSLYqs7GPZrprKwZmqvOrbWvKEeu7DsYwaAPmI_JaOsBy-sW3NCsGUmNzLFSztEVlEiIRtJJNXi63T5xGPf3kdC_zg8mIZBSb3PfqQRQ2X7_LtFHTAyr-__XHEqRECL3tVf1YZM8IzklYm99KbwG3hRxWlQG6gCUmffmUFadCQUjXS5n8fLlcA9H7p3JDj3paOFnhYQpu8pk37iKP3OtI_Y6-vhROck1VzKn7gEXp1iCe3pAQibEAvfe4e6xWJZvhml2LgAr2yG6BOaVmwLucKUm8e6MVKIzGW2fH9EHBlv0D4FoAD0CCkB1aMn9ou7dlC-S_9qVrflaTpNzgepIFZYuwfTQxD9bNKmPMkMKLyOb43mENYhnCWYYatF8rmnhnDJW1O-hqtn33RzfmWz7iGyzXSJxCw4ge6KDOoYXaBmD1QZyRDb7V8xKao6nsttEkHlqz3AopoKphufqu1fvVXrk0q1GEzvdPkGTxEGGGEHkTxWwq5xFNlX4dyxrji20NvOrNNoFtqbQqEIsXIM",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk4NjVhOC0wZTNjLTczMjUtYmE3MS0wMTUxZTUyZmI1YTkiLCJqdGkiOiIyNTU4ZGE4MDdlNTE1MDZlN2UwNmFhMWRkZjU0ZTRiOTIyYzhiZTVhYWNkZmMxNDE5YTA1ZmUyMGM1NTlhZjE3NjQ0MzAyOGJlMWUyNGVkYiIsImlhdCI6MTc1NDI1MDg5OC4xMDAwMzIsIm5iZiI6MTc1NDI1MDg5OC4xMDAwMzUsImV4cCI6MTc4NTc4Njg5OC4wOTU0NTksInN1YiI6IjEiLCJzY29wZXMiOltdfQ.NK038imIqaCh8yQQoMTVT0u0MeDab0sQd156-d0CILDqSKJM1StzIw2iX6TkpNn4s0wV5IuP6xhIavHY6trm48CuT4gZkKtXDtWMY4AsmaKsRGQHIolJdpJ3yxs1xTu8kAq7Xwc7YxTTWMGGTy38ATTl8LXHuNBpYIKXl1W-71vLIMF_aDDaeand6gsiOspH1NJagyM2UxIAt8pGxozgrLqqmuUNFSeMyeYliJ11tqzfp6a807IZAQH3kb95S6QqaQgMgNL-YBhUf4ehhJh3kMzkJYOiLdSnS0xAWxrMT30Ovzd_YAwoHclfitvPTTJyXToEMmyOSbI79VwvKOuK_NFaPR9l1jV2-byFXvGiy_V6W9D_eD4WkVYDrKL1vhg4M1kFMO4wOzlYhsdhhyIXAAxo1fnhrEuo6VtVvsu_ZYGyhtfM2bEMzeyGcuqVBkOH-KR1SHY2mEgvB75zRtA_4lLoqZzkmXh0xOdTo6wlVz23l3T-doqqhHLSV5jaAY2fzfROPiO1NhgUvCiRKqO952B-O_CeAh0sXYTNLGy8n13Nr-oHyobm6fSZ_0JsXnHPbAGZ8ueJimbdQvOmhbKHjkpni0GxZen4CpeaomHTQvRgTIynnGtBB5mDxU9IqBQcZ3XZzUzfQt8XIh4qVYrHttDF_YdXP477411i-TuPX4o",
 									"type": "string"
 								}
 							]
@@ -783,14 +796,14 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "{{server}}/api/categories/8",
+							"raw": "{{server}}/api/categories/7",
 							"host": [
 								"{{server}}"
 							],
 							"path": [
 								"api",
 								"categories",
-								"8"
+								"7"
 							]
 						}
 					},
@@ -1020,7 +1033,7 @@
 											"formdata": [
 												{
 													"key": "phone_number",
-													"value": "09777777777",
+													"value": "098745631",
 													"description": "string",
 													"type": "text"
 												},
@@ -1032,7 +1045,7 @@
 												},
 												{
 													"key": "price",
-													"value": "1000",
+													"value": "1200",
 													"description": "decimal (10,2) ",
 													"type": "text"
 												},
@@ -1040,11 +1053,11 @@
 													"key": "images[]",
 													"description": "file 0->5",
 													"type": "file",
-													"src": "/Users/ramaabbas/Desktop/مركبات.png"
+													"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (34).png"
 												},
 												{
 													"key": "state",
-													"value": "جديد",
+													"value": "new",
 													"description": "['new', 'used','مستعمل','جديد'] / اختر اما القيم الهربية او الانكليزية ",
 													"type": "text"
 												},
@@ -1056,25 +1069,25 @@
 												},
 												{
 													"key": "address_details",
-													"value": " كفرسوسة مقابل الشام سنتر",
+													"value": "Damascus, Al Mazza",
 													"description": "string",
 													"type": "text"
 												},
 												{
 													"key": "description",
-													"value": "test des............................",
+													"value": "new description",
 													"description": "text",
 													"type": "text"
 												},
 												{
 													"key": "title",
-													"value": "مولد كهربائي",
+													"value": "electronic",
 													"description": "string",
 													"type": "text"
 												},
 												{
 													"key": "price_type",
-													"value": "قابل للتفاوض",
+													"value": "free",
 													"description": " ['free', 'negotiable', 'non-negotiable','مجاني','قابل للتفاوض','غير قابل للتفاوض']ايضا اختيار اما العربية او الانكليوية ",
 													"type": "text"
 												},
@@ -1136,6 +1149,21 @@
 													"key": "ad_type",
 													"value": "product",
 													"description": "dont change this ",
+													"type": "text"
+												},
+												{
+													"key": "lat",
+													"value": "33.5138073",
+													"type": "text"
+												},
+												{
+													"key": "long",
+													"value": "36.2765279",
+													"type": "text"
+												},
+												{
+													"key": "currency",
+													"value": "SYP",
 													"type": "text"
 												}
 											]
@@ -1200,13 +1228,13 @@
 													"description": "file 0->5",
 													"type": "file",
 													"src": [
-														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
-														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+														"/C:/Users/USER/Pictures/Screenshots/Screenshot (42).png",
+														"/C:/Users/USER/Pictures/Screenshots/Screenshot (43).png"
 													]
 												},
 												{
 													"key": "state",
-													"value": "جديد",
+													"value": "new",
 													"description": "['new', 'used','مستعمل','جديد']",
 													"type": "text"
 												},
@@ -1292,6 +1320,21 @@
 													"key": "ad_type",
 													"value": "product",
 													"description": "dont change this ",
+													"type": "text"
+												},
+												{
+													"key": "lat",
+													"value": "36.123404",
+													"type": "text"
+												},
+												{
+													"key": "long",
+													"value": "33.123478",
+													"type": "text"
+												},
+												{
+													"key": "currency",
+													"value": "SYP",
 													"type": "text"
 												}
 											]
@@ -4258,10 +4301,7 @@
 													"key": "images[]",
 													"description": "file  0---->5",
 													"type": "file",
-													"src": [
-														"postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a",
-														"postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
-													]
+													"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (43).png"
 												},
 												{
 													"key": "state",
@@ -4374,6 +4414,21 @@
 												{
 													"key": "ad_type",
 													"value": "product",
+													"type": "text"
+												},
+												{
+													"key": "lat",
+													"value": "33.5132",
+													"type": "text"
+												},
+												{
+													"key": "long",
+													"value": "36.2768",
+													"type": "text"
+												},
+												{
+													"key": "currency",
+													"value": "SYP",
 													"type": "text"
 												}
 											]
@@ -4946,12 +5001,12 @@
 							"query": [
 								{
 									"key": "category_id",
-									"value": "6",
+									"value": "7",
 									"disabled": true
 								},
 								{
 									"key": "sub_category_id",
-									"value": "24",
+									"value": "23",
 									"disabled": true
 								},
 								{
@@ -4966,7 +5021,7 @@
 								},
 								{
 									"key": "price",
-									"value": "0",
+									"value": "1000",
 									"disabled": true
 								},
 								{
@@ -4981,17 +5036,17 @@
 								},
 								{
 									"key": "title",
-									"value": "محل تجاري للايجار",
+									"value": "ss",
 									"disabled": true
 								},
 								{
 									"key": "price_min",
-									"value": "700",
+									"value": "10.0",
 									"disabled": true
 								},
 								{
 									"key": "price_max",
-									"value": "900",
+									"value": "50",
 									"disabled": true
 								}
 							]
@@ -5002,20 +5057,10 @@
 				{
 					"name": "get my product",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiIxMmNmMDY5YWMwMzA0ZWU5MGMyNjdiZDY0OWRiNzg4YWFkMzg1MzA4ODA3OWMxZTQ2ZjgyMzdhZTY4MjcyNTBlN2U5ZTU4MDkwNjc0ZmQ0MCIsImlhdCI6MTc1MjU3Mjk2MS41NTkzNDMsIm5iZiI6MTc1MjU3Mjk2MS41NTkzNDQsImV4cCI6MTc4NDEwODk2MS41NDkzNzYsInN1YiI6IjI0Iiwic2NvcGVzIjpbXX0.YLNJJ0T4lPyPdOEFXDXOOiDvzpUJEg7RVlXMFFiLcll0AV8SZ2DwQ5tBRcSRIxiBszIaBO7k_CyQoTq5FvNP7AgX97U-owShvoJ729rRjjh1GXD0hILsgynLWP5dj4okYW-qBdV9ILa1MiPRAwadnsqUJz0vWNjb_UvFF1P0hhjIfa8qZejolgYVZO_HjfedF7G0r01A0ZSwDNE8yIM_XheMiv7q_ESw0j8gTJa3rQuOk_pR_f9gPqsEpM4Ix9KqHY20QRQ9kXbyDCXn4qwHgBU3qFnZ5hcRhuHvlOFDTxWEMYrNakm_368aJ5CDHD1vUKzOg-10zyAB_TL2_oygcquqACDt29hxIVtxdcvg4wqQtPY52_I28bzQi7JOAA7i_KnDQxFI26UsXugdG8lq9C419jo2buUfBxbfG2ypSRSttlYGzhyKlCMl_FMo6ijIwxBSENlnNAv8-t2AqYhuhhujNc-HyeBDQ15LALexEGIJYQLytlAMrxVlN_nASY7TeoMWQAaDxJc5LmXpwqmeD4pbsz4hcNysGITZoq_HJs2AzOvYjHr7QhufMgFSmQEPx9wK-QD-yCtoe3FnP5KLSlIAJrSVdjNV6A2ljvizfKGwPX99BPLVMIXEghyA6wtOCrIgoxoRYvDcf3rnd_NC3VFLlvR8tJjQehg0KtEgpOM",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{server}}/api/products/me?newest=1",
+							"raw": "{{server}}/api/products/me",
 							"host": [
 								"{{server}}"
 							],
@@ -5037,7 +5082,8 @@
 								},
 								{
 									"key": "newest",
-									"value": "1"
+									"value": "1",
+									"disabled": true
 								}
 							]
 						}
@@ -5052,7 +5098,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiJhYTg3YTUxNDE2YWI1MmE2NGMwYTBhODUyMzc2NzI1YzIwODZlODViN2EyZWJlMzIzYTZkNDEwYmI3OWNjZjI4ODk5NjNjNjU0Y2VjNWQxZCIsImlhdCI6MTc1MjU3NTQ5MS4yNDAzMzUsIm5iZiI6MTc1MjU3NTQ5MS4yNDAzMzUsImV4cCI6MTc4NDExMTQ5MS4yMjY3MzYsInN1YiI6IjIzIiwic2NvcGVzIjpbXX0.Lqp8SuuqzXc2h8DBOUXVSYo9_qx03q6fyleKG2_eUf68oVgXFmJGBiU7SCAOOw9GrOWO_mkOfQWR-4B4QVkB-G--VCN9eLJp7DBREq1Sh-N8Za8BWi6pcaT-J4TaH-UUo4XxbFmsNyE7u1Kx5laEWHUEwrnX3xXtmF0rzNTueqkpbFt6RC9dkks-BAP013vWUO49BmBZln01N8R3coy8FLqP3P5-YnROCCvIddMA6_TrdMEzO5P_vCic38AicZSRZwklHzgUMAKXTtb-xeTFLgQ-2lA1xWHQH_oga5PHKopmhDxhfHjrWRcoGotqaZBXnHwJsieY3as5S0ZOKCf0hPjjGmIGfX_jBYHsYvMIVqj5S_lgQNLRE7YZmaDg55cSzMqY7W_9ehMWhp0DEkxlMVT5CnHDAvocUqX1uljwpsXWj452bf8qIjNutDtom5lzNBiHCh9Hit_uzBvB6GVlZdQwyXlP0bdrZv2-kWl0bJYgDZn2q2T-_z7g9cVRikimz0qutz85FSgCn9HQ1LqSzGwMvdLixnP8Lu7k2or9vFO1cZPl6iffj6YXyg3XaBNiF1_lCk5pwEtOiOn5zzgoEpnRhQXIG1W2EeTUpnCIzj_vr1lH6W8tPkHhPvu7Gfo1AG_ZA0eL_nCcomzthqi365-zYUTBdmzFPclV8hjEeLc",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk4NjVhOC0wZTNjLTczMjUtYmE3MS0wMTUxZTUyZmI1YTkiLCJqdGkiOiJlMDk4MTc0ZTg0NjAzMWJiYTBhZWMxMTA5NDYyYWMyMGJjMTNjYWU2MGY3ZTJkYzk5MjBiZDY1N2NhOGRmZTRmNjExN2U5Y2Q2NDllYzgyMSIsImlhdCI6MTc1NDI0NDc3OC43NjkzMjksIm5iZiI6MTc1NDI0NDc3OC43NjkzMzMsImV4cCI6MTc4NTc4MDc3OC43NjI4ODMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.1NP6VNWsXyEyR-cRUa0VQVgN-swn5U3ileq9Ot-TnzK9Z1_DY84dP-5onje8I2nIe2TV8qfJAPtog1qTV9pjbm-ZaW1XEif6il6KrR4eNL_lzL-EymbxK_fi36waks9AQJ6N03sLuhvdhmOZeGFCJnemOPen1ft-j66Nl9wwTlX2JmtgWlwJCD0IO-4T2Is6gY0IEFX2gtPikmQ6VUBjPetNPvQaQuxFfcRw_T3obtV9U8bxJsoame1pXxCsSVHKZY8xgJ2s9UBjD4bLtrzLYhX75LPe4gIw6tYAif9vxNMOL9ObqHybK1LwC-TZo4Z9R5vnu5PMLmHRl8uWwkOU7cqiE5vCcE5ganxKBb6Uo3NNK6BtgyVjQS7Dos-HvAHmo1NNoCnO18GW6RfdLcf_lo-WsodcOTWPPaRrngOYtAkCI84-PpFh23cYXNsykw_vk679ZmrewM2DSBdbgTvhYKli_Q2sYA4yietpkWza3qqgeKHHVbH6ec71G6MzOLEwT5XMk8Tcq4lpxIg6OTDjeplSWfPbaz4C1kgsppOEM1KjlF6D4MjQ9Gsxh5wKZMFiMy4IfWmainE9sla5L5NtsjdKzz3LpcplO6BSLg19wGEYt_IwfG35qptphmhYTZNEB7aPCFOgvsNXoNGlEi6lCsi--pzbMBZvnIeAfUdhqRI",
 									"type": "string"
 								}
 							]
@@ -5060,7 +5106,7 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "{{server}}/api/admin/products/1/feature",
+							"raw": "{{server}}/api/admin/products/11/feature",
 							"host": [
 								"{{server}}"
 							],
@@ -5068,7 +5114,7 @@
 								"api",
 								"admin",
 								"products",
-								"1",
+								"11",
 								"feature"
 							]
 						}
@@ -5110,7 +5156,7 @@
 							"formdata": [
 								{
 									"key": "product_id",
-									"value": "1",
+									"value": "10",
 									"type": "text"
 								}
 							]
@@ -5155,6 +5201,90 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getProductsDetailsKeys",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server}}/api/products/productsDetailsKeys",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"productsDetailsKeys"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "7",
+									"disabled": true
+								},
+								{
+									"key": "sub_category_id",
+									"value": "23",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "is_featured",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "seller_id",
+									"value": "24",
+									"disabled": true
+								},
+								{
+									"key": "newest",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "ss",
+									"disabled": true
+								},
+								{
+									"key": "price_min",
+									"value": "10.0",
+									"disabled": true
+								},
+								{
+									"key": "price_max",
+									"value": "50",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -5195,20 +5325,10 @@
 				{
 					"name": "get stores",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTk3OTFlNy03MGMyLTczMjQtOTFiYS1iNjQxYmE3ZjZhZmIiLCJqdGkiOiJhYTg3YTUxNDE2YWI1MmE2NGMwYTBhODUyMzc2NzI1YzIwODZlODViN2EyZWJlMzIzYTZkNDEwYmI3OWNjZjI4ODk5NjNjNjU0Y2VjNWQxZCIsImlhdCI6MTc1MjU3NTQ5MS4yNDAzMzUsIm5iZiI6MTc1MjU3NTQ5MS4yNDAzMzUsImV4cCI6MTc4NDExMTQ5MS4yMjY3MzYsInN1YiI6IjIzIiwic2NvcGVzIjpbXX0.Lqp8SuuqzXc2h8DBOUXVSYo9_qx03q6fyleKG2_eUf68oVgXFmJGBiU7SCAOOw9GrOWO_mkOfQWR-4B4QVkB-G--VCN9eLJp7DBREq1Sh-N8Za8BWi6pcaT-J4TaH-UUo4XxbFmsNyE7u1Kx5laEWHUEwrnX3xXtmF0rzNTueqkpbFt6RC9dkks-BAP013vWUO49BmBZln01N8R3coy8FLqP3P5-YnROCCvIddMA6_TrdMEzO5P_vCic38AicZSRZwklHzgUMAKXTtb-xeTFLgQ-2lA1xWHQH_oga5PHKopmhDxhfHjrWRcoGotqaZBXnHwJsieY3as5S0ZOKCf0hPjjGmIGfX_jBYHsYvMIVqj5S_lgQNLRE7YZmaDg55cSzMqY7W_9ehMWhp0DEkxlMVT5CnHDAvocUqX1uljwpsXWj452bf8qIjNutDtom5lzNBiHCh9Hit_uzBvB6GVlZdQwyXlP0bdrZv2-kWl0bJYgDZn2q2T-_z7g9cVRikimz0qutz85FSgCn9HQ1LqSzGwMvdLixnP8Lu7k2or9vFO1cZPl6iffj6YXyg3XaBNiF1_lCk5pwEtOiOn5zzgoEpnRhQXIG1W2EeTUpnCIzj_vr1lH6W8tPkHhPvu7Gfo1AG_ZA0eL_nCcomzthqi365-zYUTBdmzFPclV8hjEeLc",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{server}}/api/stores?id=12",
+							"raw": "{{server}}/api/stores",
 							"host": [
 								"{{server}}"
 							],
@@ -5224,7 +5344,8 @@
 								},
 								{
 									"key": "id",
-									"value": "12"
+									"value": "12",
+									"disabled": true
 								}
 							]
 						}
@@ -5312,13 +5433,13 @@
 									"key": "logo",
 									"description": "nullable",
 									"type": "file",
-									"src": []
+									"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (43).png"
 								},
 								{
 									"key": "cover_image",
 									"description": "nullable",
 									"type": "file",
-									"src": "/C:/Users/96393/Pictures/Saved Pictures/Slide9.PNG"
+									"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (43).png"
 								}
 							]
 						},
@@ -5426,20 +5547,20 @@
 								},
 								{
 									"key": "description",
-									"value": "second category offer",
+									"value": "new product offer",
 									"description": "nullable",
 									"type": "text"
 								},
 								{
 									"key": "discount_percentage",
-									"value": "25",
+									"value": "20",
 									"description": "min:1|max:100",
 									"type": "text"
 								},
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/96393/Pictures/Saved Pictures/Slide1.PNG"
+									"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (43).png"
 								}
 							]
 						},
@@ -5557,7 +5678,7 @@
 								},
 								{
 									"key": "price",
-									"value": "حسب نوع الخدمة ",
+									"value": "100",
 									"description": "string",
 									"type": "text"
 								},
@@ -5589,7 +5710,22 @@
 									"key": "images[]",
 									"description": "files  between 0--->5 file ",
 									"type": "file",
-									"src": "postman-cloud:///1ef033bf-e9a3-4ed0-9904-a9a22596de1a"
+									"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (42).png"
+								},
+								{
+									"key": "lat",
+									"value": "36.2222",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "36.2222",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "SYP",
+									"type": "text"
 								}
 							]
 						},
@@ -5765,7 +5901,7 @@
 								},
 								{
 									"key": "start_date",
-									"value": "18/5/2025",
+									"value": "01/08/2025",
 									"description": "string",
 									"type": "text"
 								},
@@ -5797,7 +5933,22 @@
 									"key": "images[]",
 									"description": "file 0---->5",
 									"type": "file",
-									"src": "postman-cloud:///1ef01afd-f4f1-4060-a374-2552e6ba6f4d"
+									"src": "/C:/Users/USER/Pictures/Screenshots/Screenshot (42).png"
+								},
+								{
+									"key": "long",
+									"value": "33.00",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "36.2222",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "SYP",
+									"type": "text"
 								}
 							]
 						},
@@ -6231,17 +6382,17 @@
 							"formdata": [
 								{
 									"key": "distance",
-									"value": "500",
+									"value": "10000",
 									"type": "text"
 								},
 								{
 									"key": "long",
-									"value": "33.525022",
+									"value": "36.2765279",
 									"type": "text"
 								},
 								{
 									"key": "lat",
-									"value": "36.218760",
+									"value": "33.5138073",
 									"type": "text"
 								}
 							]
@@ -6512,7 +6663,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{server}}/api/admin/products/delete?product_id=9",
+									"raw": "{{server}}/api/admin/products/delete?product_id=11",
 									"host": [
 										"{{server}}"
 									],
@@ -6525,7 +6676,7 @@
 									"query": [
 										{
 											"key": "product_id",
-											"value": "9"
+											"value": "11"
 										}
 									]
 								}
@@ -6991,14 +7142,6 @@
 					"response": []
 				}
 			]
-		},
-		{
-			"name": "New Request",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
 		}
 	],
 	"auth": {
