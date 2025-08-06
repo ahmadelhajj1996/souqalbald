@@ -16,6 +16,7 @@ class JobAd extends Model
     use SearchByLocationHandler;
 
     protected $table = 'job_ads';
+
     protected $FieldToCalculateRatesFor = 'salary';
 
     protected $fillable = [
@@ -62,10 +63,11 @@ class JobAd extends Model
 
     public function getSellerPhoneAttribute()
     {
-        $user = User::where('id',$this->added_by)->first();
-        if($user === null){
+        $user = User::where('id', $this->added_by)->first();
+        if ($user === null) {
             return '';
         }
+
         return $user->seller !== null ?
             $user->seller?->phone :
             $user->phone;

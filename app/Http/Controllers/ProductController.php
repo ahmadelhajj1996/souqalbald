@@ -44,7 +44,7 @@ class ProductController extends Controller
             'costs',
         ]);
         if ($request->filled('title')) {
-            $query->where('title', 'like', '%' . $request->title . '%');
+            $query->where('title', 'like', '%'.$request->title.'%');
         }
 
         if ($request->filled('category_id')) {
@@ -636,7 +636,7 @@ class ProductController extends Controller
         $violations = $product->violations()
             ->orderBy('created_at', 'desc')
             ->get()
-            ->map(fn(Violation $v) => [
+            ->map(fn (Violation $v) => [
                 'id' => $v->id,
                 'type' => $v->type,
                 'notes' => $v->notes,
@@ -703,9 +703,10 @@ class ProductController extends Controller
             ElectronicsProductDetail::class,
         ];
         $result = [];
-        foreach($models as  $model){
-            $result[class_basename($model)] = (new $model())->getFillable();
+        foreach ($models as $model) {
+            $result[class_basename($model)] = (new $model)->getFillable();
         }
+
         return $this->successResponse($result);
     }
 

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->integer('cost');
             $table->string('from_currency');
             $table->string('to_currency');
-            $table->float('rate',5);
-            $table->float('cost_after_change',5);
+            $table->float('rate', 5);
+            $table->float('cost_after_change', 5);
             $table->boolean('is_main')->default(false);
             $table->timestamps();
         });

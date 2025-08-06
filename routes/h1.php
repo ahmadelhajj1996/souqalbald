@@ -67,7 +67,7 @@ Route::group(
         'controller' => ProductController::class,
     ],
     function (): void {
-        Route::get('productsDetailsKeys','productsDetailsKeys');
+        Route::get('productsDetailsKeys', 'productsDetailsKeys');
     }
 );
 

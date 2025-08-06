@@ -13,7 +13,8 @@ class Product extends Model
     use HasFactory;
     use SearchByLocationHandler;
 
-    protected $appends = ['final_price','seller_phone'];
+    protected $appends = ['final_price', 'seller_phone'];
+
     protected $fillable = [
         'sub_category_id',
         'title',
@@ -151,10 +152,11 @@ class Product extends Model
 
     public function getSellerPhoneAttribute()
     {
-        $user = User::where('id',$this->added_by)->first();
-        if($user === null){
+        $user = User::where('id', $this->added_by)->first();
+        if ($user === null) {
             return '';
         }
+
         return $user->seller !== null ?
             $user->seller?->phone :
             $user->phone;

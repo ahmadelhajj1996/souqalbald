@@ -41,12 +41,12 @@ class ServiceController extends Controller
             }
         }
 
-        return $this->successResponse($service->load(['costs','images']), 'service', 'service_created_successfully');
+        return $this->successResponse($service->load(['costs', 'images']), 'service', 'service_created_successfully');
     }
 
     public function index()
     {
-        $query = Service::with(['costs','images']);
+        $query = Service::with(['costs', 'images']);
         $services = $query->get();
 
         return $this->successResponse($services, 'service', 'servicesـretrievedـsuccessfully');
@@ -55,7 +55,7 @@ class ServiceController extends Controller
     public function getUserServices()
     {
         $user = auth()->user();
-        $query = Service::where('added_by', $user->id)->with(['costs','images']);
+        $query = Service::where('added_by', $user->id)->with(['costs', 'images']);
         $services = $query->get();
 
         return $this->successResponse($services, 'service', 'servicesـretrievedـsuccessfully');
