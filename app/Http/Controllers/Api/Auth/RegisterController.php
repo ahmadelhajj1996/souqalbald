@@ -476,15 +476,18 @@ class RegisterController extends Controller
         }
     }
 
-    public function redirectToProvider($provider)
+    public function redirectToSocialProvider($provider)
     {
         return Socialite::driver($provider)->stateless()->redirect();
     }
 
-    public function handleProviderCallback($provider)
+    public function handleSocialProviderCallback($provider)
     {
         try {
-            $socialUser = Socialite::driver($provider)->user();
+            if(!in_array($provider,['facebook','google'])){
+                throw new \Exception("invalid provider");
+            }
+            $socialUser = Socialite::driver($provider)->stateless()->user();
 
             $user = User::firstOrCreate([
                 'email' => $socialUser->getEmail(),
@@ -496,7 +499,7 @@ class RegisterController extends Controller
             ]);
 
             if (! $user->hasRole('customer')) {
-                $user->assignRole('customer');
+                $user->assignRole(Role::where('name', 'customer')->where('guard_name', 'api')->first());
             }
 
             $token = $user->createToken('SocialCustomerToken')->accessToken;
