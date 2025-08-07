@@ -191,37 +191,6 @@ class RegisterController extends Controller
         ], 'auth', 'guest_registered');
     }
 
-    public function socialRegister($provider)
-    {
-        try {
-            $socialUser = Socialite::driver($provider)->stateless()->user();
-
-            $user = User::firstOrCreate([
-                'email' => $socialUser->getEmail(),
-            ], [
-                'name' => $socialUser->getName() ?? $socialUser->getNickname() ?? 'Social User',
-                'password' => Hash::make(uniqid()),
-                'provider_id' => $socialUser->getId(),
-                'provider' => $provider,
-            ]);
-
-            if (! $user->hasRole('customer')) {
-                $user->assignRole('customer');
-            }
-
-            $token = $user->createToken('SocialCustomerToken')->accessToken;
-
-            return $this->successResponse([
-                'token' => $token,
-                'user' => $user,
-            ], 'auth', 'registered');
-        } catch (Throwable $e) {
-            return $this->errorResponse('registration_failed', 'auth', 500, [
-                'error' => $e->getMessage(),
-            ]);
-        }
-    }
-
     public function upgradeToSeller(UpgradeToSellerRequest $request)
     {
         try {
@@ -493,13 +462,14 @@ class RegisterController extends Controller
                 'email' => $socialUser->getEmail(),
             ], [
                 'name' => $socialUser->getName() ?? $socialUser->getNickname() ?? 'Social User',
-                'password' => Hash::make(uniqid()),
+                'password' => Hash::make("password_{$socialUser->getName()}"),
                 'provider_id' => $socialUser->getId(),
                 'provider' => $provider,
             ]);
 
             if (! $user->hasRole('customer')) {
-                $user->assignRole(Role::where('name', 'customer')->where('guard_name', 'api')->first());
+                $role = Role::where('name', 'customer')->where('guard_name', 'api')->first();
+                $user->assignRole($role);
             }
 
             $token = $user->createToken('SocialCustomerToken')->accessToken;
