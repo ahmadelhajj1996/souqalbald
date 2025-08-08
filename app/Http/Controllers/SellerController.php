@@ -93,7 +93,7 @@ class SellerController extends Controller
     {
         try {
             $sellers = Seller::with('user:id,name,email,phone,is_active')
-                ->select('id', 'user_id', 'store_owner_name', 'store_name', 'address', 'logo', 'description', 'created_at')
+                ->select('id', 'user_id', 'store_owner_name', 'store_name', 'address', 'logo', 'description', 'status' ,'created_at')
                 // ->where('status', 'accepted')
                 // ->where('is_active', 1)
                 ->orderBy('created_at', 'desc')
