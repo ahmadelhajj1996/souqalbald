@@ -95,7 +95,7 @@ class SellerController extends Controller
             $sellers = Seller::with('user:id,name,email,phone')
                 ->select('id', 'user_id', 'store_owner_name', 'store_name', 'address', 'logo', 'description', 'created_at')
                 ->where('status', 'accepted')
-                ->where('is_active', 1)
+                // ->where('is_active', 1)
                 ->orderBy('created_at', 'desc')
                 ->paginate(20);
 
