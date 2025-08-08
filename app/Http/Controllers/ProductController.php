@@ -121,6 +121,7 @@ class ProductController extends Controller
                     'long',
                     'lat',
                     'seller_phone',
+                     'is_active' ,                 
                     'created_at',
                     'updated_at',
                 ]),
