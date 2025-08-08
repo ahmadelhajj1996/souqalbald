@@ -94,7 +94,7 @@ class SellerController extends Controller
         try {
         $sellers = Seller::select('id', 'user_id', 'store_owner_name', 'store_name', 'address', 'logo', 'description', 'status', 'created_at')
             ->whereHas('user', function($query) {
-                $query->where('is_active', 1);
+                // $query->where('is_active', 1);
             })
             ->with(['user' => function($query) {
                 $query->select('id', 'name', 'email', 'phone', 'is_active');
