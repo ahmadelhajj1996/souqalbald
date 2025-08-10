@@ -52,7 +52,7 @@ class ProductRequest extends FormRequest
             'phone_number' => 'required|string|max:20',
             'email' => 'nullable|email',
             'sub_category_id' => 'required|exists:sub_categories,id',
-            'images' => 'nullable|array|max:5',
+            'images' => 'nullable|array|max:20',
             'images.*' => 'image|mimes:jpg,jpeg,png,webp|max:2048',
             'price' => 'nullable|numeric',
             'price_type' => 'nullable|in:free,negotiable,non-negotiable,غير قابل للتفاوض,قابل للتفاوض,مجاني', // 'مجاني','قابل للتفاوض','غير قابل للتفاوض'
