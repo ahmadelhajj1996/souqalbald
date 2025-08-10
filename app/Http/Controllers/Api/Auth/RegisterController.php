@@ -413,7 +413,7 @@ class RegisterController extends Controller
     {
         try {
             $user = User::findOrFail($id);
-            $user->is_active = 0;
+            $user->is_active = !$user->is_active ;
             $user->save();
 
             return $this->successResponse(

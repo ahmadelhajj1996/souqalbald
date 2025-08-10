@@ -14,7 +14,7 @@ class CustomerController extends Controller
         try {
 
             $customers = User::role('customer', 'api')
-                ->select('id', 'name', 'email', 'phone', 'created_at')
+                ->select('id', 'name', 'email', 'phone' , 'is_active', 'created_at')
                 ->orderBy('created_at', 'desc')
                 ->paginate(20);
 

@@ -92,13 +92,15 @@ class SellerController extends Controller
     public function index()
     {
         try {
-            $sellers = Seller::with('user:id,name,email,phone')
-                ->select('id', 'user_id', 'store_owner_name', 'store_name', 'address', 'logo', 'description', 'created_at')
-                ->where('status', 'accepted')
-                ->where('is_active', 1)
-                ->orderBy('created_at', 'desc')
-                ->paginate(20);
-
+        $sellers = Seller::select('id', 'user_id', 'store_owner_name', 'store_name', 'address', 'logo', 'description', 'status', 'created_at')
+            ->whereHas('user', function($query) {
+                // $query->where('is_active', 1);
+            })
+            ->with(['user' => function($query) {
+                $query->select('id', 'name', 'email', 'phone', 'is_active');
+            }])
+            ->orderBy('created_at', 'desc')
+            ->paginate(20);
             return $this->successResponse($sellers, 'auth', 'fetched_successfully.');
         } catch (\Throwable $e) {
 
