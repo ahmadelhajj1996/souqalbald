@@ -148,9 +148,9 @@ class RegisterController extends Controller
                         );
                         error_log('Notification sent successfully.');
                     } catch (\Kreait\Firebase\Exception\Messaging\NotFound $e) {
-                        error_log('Firebase token not found or invalid: '.$firebaseToken);
+                        error_log('Firebase token not found or invalid: ' . $firebaseToken);
                     } catch (\Exception $e) {
-                        error_log('Failed to send notification: '.$e->getMessage());
+                        error_log('Failed to send notification: ' . $e->getMessage());
                     }
                 }
             }
@@ -172,7 +172,7 @@ class RegisterController extends Controller
     public function guestRegister()
     {
         $user = User::create([
-            'name' => 'Guest-'.uniqid(),
+            'name' => 'Guest-' . uniqid(),
             'email' => null,
             'password' => Hash::make(Str::random(12)),
         ]);
@@ -453,7 +453,7 @@ class RegisterController extends Controller
     public function handleSocialProviderCallback($provider)
     {
         try {
-            if(!in_array($provider,['facebook','google'])){
+            if (!in_array($provider, ['facebook', 'google'])) {
                 throw new \Exception("invalid provider");
             }
             $socialUser = Socialite::driver($provider)->stateless()->user();
@@ -477,6 +477,48 @@ class RegisterController extends Controller
             return response()->json([
                 'token' => $token,
                 'user' => $user,
+            ]);
+        } catch (\Throwable $e) {
+            return response()->json([
+                'error' => $e->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function handleSocialProviderToken(Request $request, $provider)
+    {
+        try {
+            if (!in_array($provider, ['facebook', 'google'])) {
+                throw new \Exception("invalid auth provider");
+            }
+            $request->validate([
+                'token' => ['required', 'string']
+            ]);
+            $token = $request->input('token') ?? '';
+            $socialUser = Socialite::driver($provider)
+                ->stateless()
+                ->userFromToken($token);
+
+            $user = User::firstOrCreate([
+                'email' => $socialUser->getEmail(),
+            ], [
+                'name' => $socialUser->getName() ?? $socialUser->getNickname() ?? 'Social User',
+                'password' => Hash::make("password_{$socialUser->getName()}"),
+                'provider_id' => $socialUser->getId(),
+                'provider' => $provider,
+            ]);
+
+            if (! $user->hasRole('customer')) {
+                $role = Role::where('name', 'customer')->where('guard_name', 'api')->first();
+                $user->assignRole($role);
+            }
+
+            $token = $user->createToken('SocialCustomerToken')->accessToken;
+
+            return response()->json([
+                'token' => $token,
+                'user' => $user,
+                'password' => "password_{$socialUser->getName()}",
             ]);
         } catch (\Throwable $e) {
             return response()->json([

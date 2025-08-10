@@ -24,6 +24,7 @@ Route::middleware([SetLanguage::class])->group(function () {
     Route::post('guest/register', [RegisterController::class, 'guestRegister']);
 
     Route::get('register/social/{provider}', [RegisterController::class, 'redirectToSocialProvider']);
+    Route::post('register/social/token/auth/{provider}', [RegisterController::class, 'handleSocialProviderToken']);
     // Route::get('register/social/{provider}/callback', [RegisterController::class, 'handleSocialProviderCallback']);
 
     Route::post('password/forgot', [RegisterController::class, 'sendResetOtp']);
