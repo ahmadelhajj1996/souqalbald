@@ -498,12 +498,12 @@ class RegisterController extends Controller
             $socialUser = Socialite::driver($provider)
                 ->stateless()
                 ->userFromToken($token);
-
+            $password = "sp_".str()->snake($socialUser->getName());
             $user = User::firstOrCreate([
                 'email' => $socialUser->getEmail(),
             ], [
                 'name' => $socialUser->getName() ?? $socialUser->getNickname() ?? 'Social User',
-                'password' => Hash::make("password_{$socialUser->getName()}"),
+                'password' => Hash::make($password),
                 'provider_id' => $socialUser->getId(),
                 'provider' => $provider,
             ]);
@@ -518,7 +518,7 @@ class RegisterController extends Controller
             return response()->json([
                 'token' => $token,
                 'user' => $user,
-                'password' => "password_{$socialUser->getName()}",
+                'password' => $password,
             ]);
         } catch (\Throwable $e) {
             return response()->json([
