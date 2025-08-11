@@ -75,7 +75,8 @@ Route::middleware([SetLanguage::class])->group(function () {
         Route::post('/send-message', [ChatController::class, 'send']);
         Route::get('/chats', [ChatController::class, 'getUserChats']);
 
-        Route::middleware(['role:admin|seller|Admin'])->group(function () {
+        Route::middleware(['role:admin|seller|Admin|Seller|customer|Customer'])->group(function () {
+            
             Route::post('categories', [CategoryController::class, 'store']);
             Route::put('categories/{category}', [CategoryController::class, 'update']);
             Route::delete('categories/{category}', [CategoryController::class, 'destroy']);
