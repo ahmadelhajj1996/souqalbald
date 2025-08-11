@@ -96,8 +96,8 @@ class NotificationController extends Controller
         $user = auth()->user();
 
         $notifications = Notification::where('user_id', $user->id)
-            ->latest('created_at');
-
+            // ->latest('created_at');
+            ->get();
         return $this->successResponse($notifications, 'notification', 'notificationـretrievedـsuccessfully');
     }
 }
